@@ -1,0 +1,40 @@
+% Set doument type
+\documentclass[a4paper,12pt]{article}
+
+% Import the packages usedin the document
+\input{configruacion/paquetes.tex}
+\input{configruacion/configuracion.tex}
+
+% empezamos a escribir el documento como tal
+\begin{document}
+
+%introducimos las portadas, tanto exterior como interior
+\input{portadas/portadaExterior.tex}
+\input{portadas/portadaInterior.tex}
+
+
+%mintroducimos el abstract, tanto en espanol como en ingles
+\input{abstract/abstractEspanol.tex}
+\input{abstract/abstractIngles.tex}
+
+\newpage
+
+% introducimos todas las listas, tanto el indice, como la de figuras y tablas
+\input{capitulos/indicesListas.tex}
+\newpage
+
+% acabamos de setear algunas configuraciones para el restto del documento
+%\changefontsizes[16pt]{12pt}
+\pagenumbering{Roman}
+\hypersetup{linkcolor=black}
+\newpage
+\pagenumbering{arabic}
+
+% empezamos a escrinbir el documento como tal con toda la informacion relevante
+\input{capitulos/introduccion/main.tex}
+\newpage
+
+
+% empezamos la bibliografia
+\input{capitulos/referencias.tex}
+\end{document}
