@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Add Image Button -->
+    <TextView
+        android:id="@+id/addImageButton"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="48dp"
+        android:background="@android:drawable/ic_menu_gallery"
+        android:layout_gravity="center" />
+
+    <!-- Seleccionarimagen -->
+    <TextView
+        android:id="@+id/seelctImageTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:text="Sleccionar una Imagen" />
+
+    <!-- Linea de separación -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="50dp"
+        android:background="@android:color/background_dark" />
+
+    <!-- Información Personal -->
+    <TextView
+        android:id="@+id/informationTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginHorizontal="50dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:text="Información Personal"/>
+
+    <!-- Nombre Apellido 1 Apellido 2-->
+    <EditText
+        android:id="@+id/userNameTi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="50dp"
+        android:hint="Nombre Apellido1 Apellido2"/>
+
+    <!-- email -->
+    <EditText
+        android:id="@+id/emailTi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="15dp"
+        android:hint="email"/>
+
+    <!-- Linea de separación -->
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="50dp"
+        android:background="@android:color/background_dark" />
+
+    <!-- Contraseña Titulo -->
+    <TextView
+        android:id="@+id/registerPasswordTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@android:color/black"
+        android:text="Contraseña"/>
+
+    <!-- Introducir Contraseña 1 -->
+    <EditText
+        android:id="@+id/password1Ti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="50dp"
+        android:inputType="textPassword"
+        android:hint="Contraseña"/>
+
+    <!-- Introducir Contraseña 2 -->
+    <EditText
+        android:id="@+id/password2Ti"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginBottom="15dp"
+        android:inputType="textPassword"
+        android:hint="Repetir Contraseña"/>
+
+    <!-- Linea de separación 3 -->
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="50dp"
+        android:background="@android:color/background_dark" />
+
+    <!-- Botón para enviar y guardar el usuario -->
+    <Button
+        android:id="@+id/buttonSaveRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:fadingEdge="horizontal"
+        android:background="@android:color/holo_blue_light"
+        android:text="Registrar Usuario" />
+
+</LinearLayout>
