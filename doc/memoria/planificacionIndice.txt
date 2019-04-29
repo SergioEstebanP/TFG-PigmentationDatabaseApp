@@ -1,0 +1,49 @@
+1. Introducción
+1.1 Prefacio
+1.2 Visión global
+1.3 Marco de desarrollo
+1.4 Objetivos
+1.5 Beneficios
+1.6 Tecnicas experimentales y medidas
+
+2. Fundamentos y herramientas. 
+2.1 Metodologías
+2.1.1 Kanban
+2.1.2 Gitflow
+2.2 Herramientas utilizadas
+2.2.1 Taiga
+2.2.2 Sonarqube
+2.2.3 Sonarlint
+2.2.4 Jenkins
+2.2.5 Sqlite
+2.2.6 Androidstudio
+2.2.7 Overleaf
+2.2.8 Github
+
+3. Planificación y gestión del proyecto
+3.1 Definición del alcance y objetivos.
+3.2. Tiempo de desarrollo
+3.3. Costes del proyecto
+3.4. Tratamiento de los riesgos
+3.5. Control de las configuraciones
+(3.6 Calidad del software.)
+
+4. Diseño del proyecto
+4.1 Volviendo al desarrollo en cascada
+4.2. Definición de criterios.
+4.3 Historias de usuario.
+4.4 Bocetos iniciales
+4.4.1. Logo de la aplicación y nombre
+4.4.2. Diseño de las primeras interfaces
+4.5 Backlog.
+4.6. Sistema de integración contínua.
+
+5. Análisis de la base de datos.
+5.1. Análisis exploratorio de datos. 
+5.2 Diseño de la base de datos.
+5.2.1 Diagrama de entidad relación.
+5.2.2. Diseño de las consultas principales. 
+5.2.3 Datos actuales, exportación y clasificación. 
+
+6. Desarrollo de la aplicación.
+5.1 Lenguaje de Android
