@@ -26,7 +26,7 @@
 3.3. Costes del proyecto
 3.4. Tratamiento de los riesgos
 3.5. Control de las configuraciones
-(3.6 Calidad del software.)
+3.6 Calidad del software.
 
 4. Diseño del proyecto
 4.1 Volviendo al desarrollo en cascada
@@ -47,3 +47,4 @@
 
 6. Desarrollo de la aplicación.
 5.1 Lenguaje de Android
+5.1.1 

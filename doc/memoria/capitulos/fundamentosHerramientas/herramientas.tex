@@ -11,7 +11,7 @@ Una vez creado el proyecto, el tablero principal de control de proyecto, con alg
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.3]{imagenes/introduccion/taiga.png}
+    \includegraphics[scale=0.3]{imagenes/fundamentosHerramientas/taiga.png}
     \caption{Tablero de Taiga.io}
     \label{fig:tableroTaiga}
 \end{figure}
@@ -37,7 +37,7 @@ He decidido integrar SonarQube y otras tecnologías en contenedores Docker \cite
 Nosotros vamos a integrar SonarQube y medir la calidad de nuestro código de 3 maneras diferentes. La primera y mas directa es en nuestro proyecto de Android Studio junto con Gradle \cite{gradle}. Ya que los proyectos de aplicaciones móviles de Android se hacen con el constructor Gradle, y Sonar (acortación de SonarQube de aquí en adelante) tiene integración con dicha herramienta, solo tenemos que crear el proyecto en el servidor previamente desplegado en docker e introducir las siguientes lineas de código en el fichero build.gradle de nuestra aplicación, mostrado en la figura \ref{fig:buildGradle}.
 
 \begin{figure} \label{fig:buildGradle}
-\lstinputlisting[style=customc]{capitulos/introduccion/codigo/build.gradle}
+\lstinputlisting[style=customc]{capitulos/fundamentosHerramientas/codigo/build.gradle}
 \caption{Configuración del fichero build.gradle}
 \end{figure}
 
@@ -45,14 +45,14 @@ Creamos la tarea en gradle correspondiente para enviar la información a nuestro
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.35]{imagenes/introduccion/sonarqube1.png}
+    \includegraphics[scale=0.35]{imagenes/fundamentosHerramientas/sonarqube1.png}
     \caption{Primer análisis del código inicial generado por Android Studio}
     \label{fig:mainSonar}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=1]{imagenes/introduccion/sonarGradleTask.png}
+    \includegraphics[scale=1]{imagenes/fundamentosHerramientas/sonarGradleTask.png}
     \caption{Tarea Gradle para Sonar}
     \label{fig:sonarGradleTask}
 \end{figure}
@@ -64,7 +64,7 @@ SonarLint \cite{sonarlint} es un plugin para los entornos de desarrollo proporci
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.5]{imagenes/introduccion/sonarLint.png}
+    \includegraphics[scale=0.5]{imagenes/fundamentosHerramientas/sonarLint.png}
     \caption{SonarLint en Android Studio}
     \label{fig:sonarLinr}
 \end{figure}
@@ -78,7 +78,7 @@ Un ejemplo de la estructura y flujo que sigue Jenkins es el siguiente:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{imagenes/introduccion/jenkins.png}
+    \includegraphics[scale=0.6]{imagenes/fundamentosHerramientas/jenkins.png}
     \caption{Flujo seguido por Jenkins}
     \label{fig:buildjenkins}
 \end{figure}
@@ -95,7 +95,7 @@ Un vistazo al panel general de Jenkins, es el siguiente:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.7]{imagenes/introduccion/mainJenkins.png}
+    \includegraphics[scale=0.7]{imagenes/fundamentosHerramientas/mainJenkins.png}
     \caption{Panel General de jenkins}
     \label{fig:mainJenkins}
 \end{figure}
@@ -143,3 +143,16 @@ Overleaf permite la edición múltiple de documentos y además también tiene un
 SQLite \cite{sqlite} es un sistema gestor de base de datos muy sencillo, que integra Android por defecto. La idea es que la base de datos que tenemos que explotar esté integrada junto con el código de la aplicación. La base de datos parece pequeña, por lo que no ocupará nada más que unos pocos de Mega Bytes. Además, como el fichero generado para usar la aplicación es un binario, la información no será accesible al exterior. La información solo será proporcionada por la aplicación y de la manera propuesta en los capítulos posteriores. 
 
 Como describiremos en los capítulos posteriores, una de las primeras tareas es investigar la estructura de la base de datos y exportarla a SQLite o MySQL, ya que son SGBD a los que estoy más acostumbrado y necesarios para la compatibilidad con y buena comunicación de datos con la aplicación. 
+
+\subsection{Balsamiq Mockups 3}
+
+Esta va a ser la herramienta utilizada para el desarrollo de los bocetos de la aplicación. Las opciones eran o la plataforma draw.io el programa de escritorio balsamiq mock up \cite{balsamiq}. Como en anteriores proyectos ya he usado esta herramienta es la que usaré en este también. A grandes rasgos nos permite diseñar de una manera sencilla y rápida todo tipo de interfaces y entradas de datos visuales para un usuario. Además nos permite simular de una manera bastante sencilla las diferentes interacciones que hay entra las pantallas de una misma aplicación o página web. 
+
+Un ejemplo de la interfaz que nos ofrece esta aplicación esla que se observa en esta figura: 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{imagenes/fundamentosHerramientas/balsamiq.png}
+    \caption{Interfaz principal de Balsamiq Mockups}
+    \label{fig:balsamiq}
+\end{figure}

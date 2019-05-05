@@ -1,11 +1,10 @@
-% Set doument type
+% Elegimo el tipo de documento y las características más importantes
 \documentclass[a4paper,12pt]{article}
 
-% Import the packages usedin the document
+% Importación de los diferentes paquetes que se usan en el documento
 \input{configruacion/paquetes.tex}
 \input{configruacion/configuracion.tex}
 
-% empezamos a escribir el documento como tal
 \begin{document}
 
 %introducimos las portadas, tanto exterior como interior
@@ -13,28 +12,31 @@
 \input{portadas/portadaInterior.tex}
 
 
-%mintroducimos el abstract, tanto en espanol como en ingles
+% introducimos el resumen, tanto en español como en ingles
 \input{abstract/abstractEspanol.tex}
 \input{abstract/abstractIngles.tex}
 
 \newpage
 
-% introducimos todas las listas, tanto el indice, como la de figuras y tablas
+% introducimos todas las listas, tanto el índice, como la de figuras y tablas
 \input{capitulos/indicesListas.tex}
 \newpage
 
-% acabamos de setear algunas configuraciones para el restto del documento
+% acabamos de decidir algunas configuraciones para el resto del documento
 %\changefontsizes[16pt]{12pt}
 \pagenumbering{Roman}
 \hypersetup{linkcolor=black}
 \newpage
 \pagenumbering{arabic}
 
-% empezamos a escrinbir el documento como tal con toda la informacion relevante
-\input{capitulos/introduccion/main.tex}
+% empezamos a escribir el documento como tal con toda la información relevante
+\input{capitulos/introduccion/main.tex} \newpage
+\input{capitulos/fundamentosHerramientas/main.tex} \newpage
+\input{capitulos/planificacionGestion/main.tex} \newpage
+\input{capitulos/diseno/main.tex} \newpage
 \newpage
 
 
-% empezamos la bibliografia
+% empezamos la bibliografía
 \input{capitulos/referencias.tex}
 \end{document}
