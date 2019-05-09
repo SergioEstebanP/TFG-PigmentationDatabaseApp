@@ -1,0 +1,13 @@
+El sistema de integración continua ha sido ligeramente descrito en los capítulos anteriores (\textbf{Sección \ref{sec:jenkins}}) cuando hablábamos de la tecnología que íbamos a utilizar, que en este caso es Jenkins. 
+
+Cabe destacar que los sistemas de integración continua y entrega continua son más relevantes en equipos de desarrollo grandes con muchos servicios diferentes. Por ejemplo si el equipo de desarrollo hace un despliegue de una nueva versión de los servicios en un entorno determinado, entonces se pasan una serie de pruebas automáticas para ver que nadie ha roto nada, etc. Sin embargo ya que la magnitud de nuestro proyecto es pequeña, esta parte tampoco tiene demasiada importancia, aunque intentaré reflejarla tal cual lo hacen las empresas en la actualidad. 
+
+Si nos basamos en la teoría fundamental de la integración continua y del proceso de pruebas, las pruebas del sistema deberían de empezar en paralelo con el desarrollo de la aplicación, mientras que las pruebas unitarias de los diferentes métodos se diseñan antes de la implementación de dichos métodos [\textcolor{red}{REFERENCIA EL ISTQB}]. 
+
+En este caso lo que voy a hacer es desarrollar la interfaces más principales de la aplicación. Una vez desarrolladas esas interfaces se diseñarán los casos de prueba más simples para dichas pantallas, los cuales se introducirán en Jenkins y desde entonces se pasarán de manera automática cada vez que se haga un push en el sistema de control de versiones. 
+
+Cuando tengamos que desarrollar algún algoritmo o método, la idea es que se desarrollen algunas pruebas unitarias mínimas para probar la funcionalidad de dicha parte del método. Estas pruebas también se añadirán en trabajos diferentes a la parte de Jenkins para que se pasen de manera automática.
+
+Entraremos más en detalle en el funcionamiento y test exactos del sistema de integración continua cuando hablemos de la calidad que queremos del software y desarrollemos las pruebas de la aplicación. 
+
+

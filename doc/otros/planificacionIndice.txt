@@ -47,4 +47,13 @@
 
 6. Desarrollo de la aplicación.
 5.1 Lenguaje de Android
-5.1.1 
+
+
+7. Pruebas de la aplicación.
+7.1 Introducción y calidad.
+7.2 SonarQube.
+7.3 Pruebas de interfaz. 
+7.3.1 Pruebas de Sistema
+7.3.2 Pruebas de regresión.
+7.4 Pruebas unitarias.
+7.5 Pruebas de aceptación. 

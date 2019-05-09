@@ -6,3 +6,4 @@ https://samuelcasanova.com/2017/11/criterios-de-aceptacion/
 http://scrum.menzinsky.com/2015/10/como-escribir-los-criterios-de.html
 http://www.velocitycounts.com/2013/05/why-do-high-performing-scrum-teams-tend-to-use-story-point-estimation/
 https://es.atlassian.com/agile/project-management/epics-stories-themes
+https://www.istqb.org/downloads/send/51-ctfl2018/208-ctfl-2018-syllabus.html

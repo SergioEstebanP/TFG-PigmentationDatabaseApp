@@ -71,7 +71,7 @@ SonarLint \cite{sonarlint} es un plugin para los entornos de desarrollo proporci
 
 En el recuadro de color azul, podemos apreciar como el plugin nos muestra las vulnerabilidades de código. En el recuadro naranja nos lista todas las posibles vulnerabilidades o fallos que tiene nuestro software, y en el recuadro verde nos pone lo que significan, argumentos de porqué ese código no es de calidad y lo más importante, es que nos pone ejemplos para solucionarlo de manera sencilla y eficaz. 
 
-\subsubsection{Jenkins}
+\subsubsection{Jenkins}\label{sec:jenkins}
 Jenkins \cite{jenkins} es una herramienta basada en la integración continua de productos software y en el desarrollo continuo. En nuestro caso lo vamos a usar como tal. Como todo producto software, nuestra aplicación va a requerir pruebas, tanto unitarias como de otros tipos. La idea es meter toda esta suite de pruebas en jenkins e integrarla tanto con github como con sonar. Lo que vamos a hacer es definir una serie de casos de prueba, tanto a nivel unitario como test de regresión, para que cada vez que el código se vea modificado por una Pull Request (nada más allá de una solicitud de cambio), la aplicación tenga que pasar los test satisfactoriamente para comprobar que no hemos roto lo anterior. Esto es para lo que vamos a usar Jenkins principalmente. Además como Jenkins tiene muchas utilidades, también podemos integrar SonarQube para que nos notifique en caso de que en una Pull Request la calidad de nuestro código se vea afectada a peor. 
 
 Un ejemplo de la estructura y flujo que sigue Jenkins es el siguiente:
