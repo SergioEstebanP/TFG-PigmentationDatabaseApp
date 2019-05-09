@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Pigmentos">
+        <item>Pigmento 1</item>
+        <item>Pigmento 2</item>
+        <item>Pigmento 3</item>
+        <item>Pigmento 4</item>
+        <item>Pigmento 5</item>
+        <item>Pigmento 6</item>
+    </string-array>
+</resources>
