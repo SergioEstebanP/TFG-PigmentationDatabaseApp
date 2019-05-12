@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
-    <fragment
-        android:id="@+id/device_info_fragment"
-        android:name="com.dbpigmentationapp.submenus.TodosPigmentosFragment"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:elevation="10dp">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray_500"
+            android:orientation="vertical"
+            android:gravity="center|right">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center|right">
+
+                <EditText
+                    android:id="@+id/barraBusqueda"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="9dp"
+                    android:background="@drawable/login_edittext"
+                    android:ems="10"
+                    android:hint="Nombre pigmento"
+                    android:drawableLeft="@drawable/lupa"
+                    android:gravity="center" >
+                </EditText>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>
