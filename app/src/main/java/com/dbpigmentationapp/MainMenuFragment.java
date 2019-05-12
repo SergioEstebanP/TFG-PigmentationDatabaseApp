@@ -12,7 +12,7 @@ import com.dbpigmentationapp.subMenus.AñadirPigmento;
 import com.dbpigmentationapp.subMenus.ConsultaAvanzada;
 import com.dbpigmentationapp.subMenus.ConsultaSimple;
 import com.dbpigmentationapp.subMenus.Graficas;
-import com.dbpigmentationapp.subMenus.ReportarBug;
+import com.dbpigmentationapp.subMenus.finalViews.ReportarBug;
 import com.dbpigmentationapp.subMenus.TodosPigmentos;
 
 public class MainMenuFragment extends Fragment {

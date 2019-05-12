@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".subMenus.Graficas" />
-        <activity android:name=".subMenus.ReportarBug" />
+        <activity android:name=".subMenus.finalViews.ReportarBug" />
         <activity android:name=".subMenus.ConsultaSimple" />
         <activity android:name=".subMenus.AñadirPigmento" />
         <activity android:name=".subMenus.ConsultaAvanzada" />
