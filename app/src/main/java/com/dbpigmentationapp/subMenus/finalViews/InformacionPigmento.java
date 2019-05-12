@@ -1,7 +1,9 @@
-package com.dbpigmentationapp;
+package com.dbpigmentationapp.subMenus.finalViews;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.dbpigmentationapp.R;
 
 public class InformacionPigmento extends AppCompatActivity {
 
