@@ -11,12 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".subMenus.finalViews.InformacionPigmento"></activity>
         <activity android:name=".subMenus.Graficas" />
         <activity android:name=".subMenus.ReportarBug" />
         <activity android:name=".subMenus.ConsultaSimple" />
-        <activity android:name=".subMenus.ConsultaAvanzada" />
         <activity android:name=".subMenus.AñadirPigmento" />
+        <activity android:name=".subMenus.ConsultaAvanzada" />
+        <activity android:name=".fragment_informacion_pigmento" />
+        <activity android:name=".subMenus.finalViews.InformacionPigmento" />
         <activity
             android:name=".MainMenu"
             android:label="@string/app_name"
