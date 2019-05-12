@@ -8,12 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.dbpigmentationapp.submenus.AñadirPigmento;
-import com.dbpigmentationapp.submenus.ConsultaAvanzada;
-import com.dbpigmentationapp.submenus.ConsultaSimple;
-import com.dbpigmentationapp.submenus.Graficas;
-import com.dbpigmentationapp.submenus.ReportarBug;
-import com.dbpigmentationapp.submenus.TodosPigmentos;
+import com.dbpigmentationapp.subMenus.AñadirPigmento;
+import com.dbpigmentationapp.subMenus.ConsultaAvanzada;
+import com.dbpigmentationapp.subMenus.ConsultaSimple;
+import com.dbpigmentationapp.subMenus.Graficas;
+import com.dbpigmentationapp.subMenus.ReportarBug;
+import com.dbpigmentationapp.subMenus.TodosPigmentos;
 
 public class MainMenuFragment extends Fragment {
 
