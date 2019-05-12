@@ -4,4 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".subMenus.finalViews.InformacionPigmento">
+
+    <fragment
+        android:id="@+id/device_info_fragment"
+        android:name="com.dbpigmentationapp.subMenus.finalViews.InformacionPigmentoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </android.support.constraint.ConstraintLayout>
