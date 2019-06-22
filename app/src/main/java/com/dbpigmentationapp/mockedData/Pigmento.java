@@ -22,6 +22,17 @@ public class Pigmento {
         this.elementoQuimico = elementoQuimico;
     }
 
+    public Pigmento () {
+        this.idPigmento = 0;
+        this.idColor = null;
+        this.nombre = null;
+        this.color = null;
+        this.potencia = 0;
+        this.lambda = 0;
+        this.formula = null;
+        this.elementoQuimico = null;
+    }
+
     // GET OPERATIONS
     public int getIdPigmento () {
         return this.idPigmento;
