@@ -1,0 +1,43 @@
+En Kanban, antes de definir las historias de usuario, tenemos que definir brevemente alguno de los criterios que usaremos en dichas historias y que son muy importantes. 
+
+Los más importantes que tenemos que definir son dos, los criterios de aceptación y los criterios de finalización.
+
+\subsubsection{Definición de hecho}
+
+La definición de hecho es una norma que se aplica a las Historias de Usuario, que desarrollaremos más adelante, pero para ello es necesario tener bien fijada esta definición con anterioridad. Normalmente esta definición es fijada de manera conjunta con el cliente final y el líder del equipo y muchas veces está presente el euqipo de desarrollo como tal para verificar las diferentes posibilidades, ya que nos permite:
+
+\begin{itemize}
+    \item \textbf{Tener un producto potencialmente entregable y usable} al finalizar cada iteración. En el caso de este proyecto no tenemos iteraciones como tal, pero si nosotros establecemos unas ciertas normas que tiene que cumplir cada una de las tareas que vamos a desarrollar, cuando nosotros finalicemos esas tareas podemos decir que están acabas y entregadas de manera adecuada y conforman el producto final perfectamente entrgeable. De esta forma el cliente, conforme tengamos tareas acabadas puede tomar decisiones de qué desarrollar en el futuro y qué no de manera clara y sencilla.
+    
+    \item \textbf{Establecer unos criterios de calidad}: define que entregables y mínimos de calidad se tienen que cumplir en todos los objetivos/requisitos que se van a ir aceptando conforme el proyecto vaya avanzando en el tiempo.
+\end{itemize}
+
+Ahora que sabemos lo que son y las posibilidades de la definición de hecho, pasamos a ver cuales serán nuestros criterios de hecho: 
+\begin{enumerate}
+    \item El trabajo de cada miembro del equipo ha sido revisado y aceptado por lo menos por una persona más del proyecto, que en este caso pueden ser tanto el tutor del proyecto como el profesor asociado.
+    \item Todo el equipo considera que para cada objetivo/requisitos se cumplen sus criterios de aceptación al 100\%. 
+    \item El requisito o tarea tiene que estar probado.
+    \item Si el requisito lo permite, tiene que superar todas las pruebas unitarias que le hayan sido diseñadas. 
+    \item Si el requisito lo permite, tiene que superar todas las pruebas de aceptación que le hayan sido diseñadas. 
+    \item Si el requisito lo permite, tiene que superar todas las pruebas de regresión que le hayan sido diseñadas. 
+    \item El requisito o tarea tiene que estar documentado.
+    \item El requisito o tarea supera una calidad respecto a código del 80\%.
+    \item El product owner ha validado y aceptado el objetivo/requisito.
+\end{enumerate}
+
+\subsubsection{Criterios de aceptación}
+
+Mientras que los criterios de finalización tienden a ser criterios mas objetivos, medibles y triviales. Los criterios de aceptación dependen en gran medida del deseo e idea que el cliente tiene sobre el producto final. 
+
+Los criterios de aceptación definen los requisitos del Product Owner sobre cómo debe comportarse la aplicación para que una determinada acción se pueda llevar a cabo, normalmente por parte de un usuario de la aplicación. Generalmente ayudan al equipo de desarrollo a responder a las preguntas: 
+\begin{itemize}
+    \item \textbf{¿He construido el producto correcto?}
+    \item \textbf{¿He construido el producto correctamente?}
+\end{itemize}
+
+Los criterios de aceptación deben describir siempre un contexto, un evento y la respuesta o consecuencia esperada del sistema. La forma más utilizada para describir los criterios de aceptación es conocida como Given-When-Then, que veremos más adelante cuando mostremos las historias de usuario. 
+Los criterios de aceptación son la clave de las historias de usuario, por lo tanto se tienen que cumplir todos los criterios de aceptación para dar una historia de usuario como terminada y correcta. 
+El cumplimiento de los criterios de aceptación de las historias de usuario, a nivel de funcionalidad se verá de una manera muy clara cuando se presente la suite de pruebas asociadas a la aplicación. Como adelanto, dicha suite de pruebas se va a basar en un lenguaje llamado Gherkin en el que los escenarios de prueba se describen en un lenguaje de alto nivel basado en el Given-Then-When.
+
+Habrá una asociación directa entre los criterios de aceptación de una historia de usuario y el test concreto que pruebe la funcionalidad de dicha historia de usuario. Todo esto lo podremos ver más en detalle en los capítulos posteriores, en concreto en el relacionado con las pruebas de la aplicación. 
+

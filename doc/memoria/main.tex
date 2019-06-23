@@ -1,0 +1,43 @@
+% Elegimo el tipo de documento y las características más importantes
+\documentclass[a4paper,12pt]{article}
+
+% Importación de los diferentes paquetes que se usan en el documento
+\input{configruacion/paquetes.tex}
+\input{configruacion/configuracion.tex}
+
+\begin{document}
+
+%introducimos las portadas, tanto exterior como interior
+\input{portadas/portadaExterior.tex}
+\input{portadas/portadaInterior.tex}
+
+
+% introducimos el resumen, tanto en español como en ingles
+\input{abstract/abstractEspanol.tex}
+\input{abstract/abstractIngles.tex}
+
+\newpage
+
+% introducimos todas las listas, tanto el índice, como la de figuras y tablas
+\input{capitulos/indicesListas.tex}
+\newpage
+
+% acabamos de decidir algunas configuraciones para el resto del documento
+%\changefontsizes[16pt]{12pt}
+\pagenumbering{Roman}
+\hypersetup{linkcolor=black}
+\newpage
+\pagenumbering{arabic}
+
+% empezamos a escribir el documento como tal con toda la información relevante
+\input{capitulos/introduccion/main.tex} \newpage
+\input{capitulos/fundamentosHerramientas/main.tex} \newpage
+\input{capitulos/planificacionGestion/main.tex} \newpage
+\input{capitulos/diseno/main.tex} \newpage
+\input{capitulos/disenoBaseDatos/main.tex} \newpage
+\newpage
+
+
+% empezamos la bibliografía
+\input{capitulos/referencias.tex}
+\end{document}

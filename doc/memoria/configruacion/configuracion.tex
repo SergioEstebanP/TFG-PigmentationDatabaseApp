@@ -1,0 +1,52 @@
+\setlength{\columnsep}{0.5cm}
+
+\definecolor{shadecolor}{rgb}{1,1,1}
+
+% seteamos unos comandos para automatizar funciones
+\renewcommand{\lstlistingname}{Código}  % Renombra listado códigos
+\renewcommand\appendixtocname{Anexos}   % Renombra appendix a apéndices en índice
+\renewcommand\appendixpagename{Anexos}  % Renombra appendix a apéndices en página
+
+% \renewcommand{\insertImage}[4]
+%{
+ %\begin{figure}[H]
+    %\centering
+    %\includegraphics[scale={#4}]{{#1}}
+    %\caption{{#2}}
+    %\label{{#3}}
+%\end{figure}
+%}
+% \insertImage{imagenes/diseno/epicasHistorias.png}{Relación entre épicas y temas}{fig:epicasHistorias}{0.6}
+
+\singlespace
+
+% setamos los tama;os y maregnes de las paginas
+\marginsize{1.5cm}{2cm}{1.5cm}{2cm} % {izdo}{dcho}{arriba}{abajo}
+\parindent=0,5cm
+
+% seteamos el encabezado y los pies de las paginas
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\pagestyle{fancy} 
+
+\lhead[UVa]{UVa}
+\rhead[Trabajo Fin Grado]{Trabajo Fin Grado}
+
+\lfoot[Aplicación base datos pigmentos]{Aplicación base datos pigmentos}
+\cfoot[]{}
+\rfoot[\thepage]{\thepage}
+
+% seteamos la configuracion del codigo integrado 
+\definecolor{mygray}{rgb}{0.95,0.95,0.95}
+
+\lstdefinestyle{customc}{
+	backgroundcolor=\color{mygray},
+	frame=single,
+	keepspaces=true,
+	keywordstyle=\color{blue},
+	commentstyle=\color{magenta},	
+	language=c,
+	numbers=left,
+	numbersep=25pt,
+	numberstyle=\color{black}
+}

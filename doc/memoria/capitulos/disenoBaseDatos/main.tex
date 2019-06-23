@@ -1,0 +1,23 @@
+\section{Diseño de la base de datos}
+\setlength{\parskip}{0.5cm}
+
+En esta sección vamos a mostrar como se ha llevado a cabo el diseño de la base de datos y los diferentes procedimientos utilizados. 
+
+Tenemos que destacar que contamos con una implementación de la base de datos de pigmentos. El problema es que dicha base de datos esta implementada en AccessDB, que es un sistema gestor de bases de datos propietario de Microsoft. Existen herramientas que permiten la integración de dichos tipos de bases de datos en otros gestores como MySQL o SQLite.
+
+En este caso la base de datos se va a diseñar desde 0 para una mejor optimización de los recursos, además se utilizará como sistema gestor de bases de datos SQLite, ya que tiene una integración completa de serie con los terminales Android.
+
+\subsection{Suposiciones y convenciones}
+\input{capitulos/disenoBaseDatos/suposiciones.tex}
+
+\subsection{Posibles consultas contra la BBDD}
+\input{capitulos/disenoBaseDatos/posiblesConsultas.tex}
+
+\subsection{Modelado conceptual}
+\input{capitulos/disenoBaseDatos/modeladoConceptual.tex}
+
+\subsection{Implementación de la base de datos}
+\input{capitulos/disenoBaseDatos/implementacionDb.tex}
+
+\subsection{Otras consideraciones}
+\input{capitulos/disenoBaseDatos/codigo/otrasConsideraciones.tex}
