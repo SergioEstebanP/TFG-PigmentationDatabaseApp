@@ -1,4 +1,4 @@
-package com.dbpigmentationapp.mockedData;
+package com.dbpigmentationapp.dataModel;
 
 public class Pigmento {
 
@@ -13,7 +13,7 @@ public class Pigmento {
 
     public Pigmento (int idPigmento, String idColor, String nombre, String color, float potencia, float lambda, String formula, String elementoQuimico) {
         this.idPigmento = idPigmento;
-        this.idColor = color;
+        this.idColor = idColor;
         this.nombre = nombre;
         this.color = color;
         this.potencia = potencia;
@@ -24,13 +24,13 @@ public class Pigmento {
 
     public Pigmento () {
         this.idPigmento = 0;
-        this.idColor = null;
-        this.nombre = null;
-        this.color = null;
-        this.potencia = 0;
-        this.lambda = 0;
-        this.formula = null;
-        this.elementoQuimico = null;
+        this.idColor = "rojo";
+        this.nombre = "Lava";
+        this.color = "#4286f4";
+        this.potencia = 100;
+        this.lambda = 200;
+        this.formula = "BarrO";
+        this.elementoQuimico = "Cu";
     }
 
     // GET OPERATIONS
