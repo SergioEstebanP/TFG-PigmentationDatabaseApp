@@ -34,12 +34,9 @@ public class TodosPigmentos extends AppCompatActivity {
         // creamos algunso pigmentos, esto lo tenemos que hacer mediante alguna forma automática o con algun script
         Pigmento p1 = new Pigmento();
 
-        // los introducimos en la base de datos
-        try {
-            db.addPigmento(p1);
-        } catch (Exception e) {
-            // elemnts already exists in DB we dont do nothing
-        }
+        // los introducimos en la base de datos al introducir ignorando los conflictos, si el dato ya existe, no deberia de saltar la excepción
+        db.addPigmento(p1);
+
         // obtenemos todos los pigmentos
         List<Pigmento> pigmentos = db.todosPigmentos();
 

@@ -19,6 +19,16 @@ public class Colorimetria {
         this.z = z;
     }
 
+    public Colorimetria() {
+        this.idPigmento = 0;
+        this.l = 0;
+        this.a = 0;
+        this.b = 0;
+        this.x = 0;
+        this.y = 0;
+        this.z = 0;
+    }
+
     public int getIdPigmento() {
         return idPigmento;
     }
