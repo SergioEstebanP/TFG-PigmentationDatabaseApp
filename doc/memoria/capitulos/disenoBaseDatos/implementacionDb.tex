@@ -1,0 +1,58 @@
+Una vez que tenemos la base de datos diseñada tenemos que implementarla dentro de nuestra aplicación. Para ello lo primero que tenemos que hacer es crear una clase auxiliar que nos permita la creación y en el futuro la conexión entre la propia aplicación y los datos almacenados en la base de datos. 
+
+Para implementar la base de datos he optado por hacerlo de una manera más sencilla que la aprendida en la asignatura de SMOV. La base en realidad es la misma, pero la forma es la misma, bien es sabido que dentro de la informática podemos obtener los mismos resultados pero con algoritmos diferentes. En este caso vamos a realizar una mezcla entre uno de los patrones de acceso comentados al principio, DAO y los POJO.
+
+Como hemos dicho en los capítulos anteriores, cada uno de los elementos de la base de datos, que en este caso son pigmentos, va a estar representado por un objeto típico de Java. Esta forma de representar los objetos para el almacenamiento de datos se denomina POJO (\textbf{P}lain \textbf{O}ld \textbf{J}ava \textbf{O}bjects).
+
+Además cada vez que recuperemos los elementos de la base de datos lo hacemos devolviendo una lista de objetos del tipo adecuado. Por ejemplo para devolver todos y cada uno de los pigmentos que hay en la base de datos lo que hacemos es mandar la consulta al SGBD de SQLite y lo que nos devuelve es una lista de POJOs del tipo deseado. 
+
+De esta manera podemos acceder de una manera sencilla a todos los atributos de los datos que acabamos de recuperar.
+
+\subsubsection{¿Que son los POJO?} 
+
+Dicho término \cite{pojo} fue acuñado por Martin Fowler, Rebecca Parsons y Josh MacKenzie en Septiembre del 2000. Se usa para referirse a un objeto Java que no tiene limitaciones de por requerir librerías ni clases externas. Son objetos simples y básicos de java, con atributos, funciones para recuperar los valores y para cambiarlos en caso necesario y nada más. Este tipo de objetos son muy utilizados cuando tenemos que convertir objetos entre diferentes lenguajes o cuando tenemos que serializarlos para enviarlos por la red. 
+
+Idealmente y según dice la definición de los mismos, un objeto Java es POJO si cumple estos 3 requisitos:
+\begin{itemize}
+    \item No extiende de ninguna clase. 
+        \begin{figure}[H]
+        \lstinputlisting[style=customc]{capitulos/disenoBaseDatos/codigo/noExtiende.java}
+        \label{fig:noExtiende}
+        \end{figure}
+    
+    \item No implementa ninguna clase. 
+        \begin{figure}[H]
+        \lstinputlisting[style=customc]{capitulos/disenoBaseDatos/codigo/noImplementa.java}
+        \label{fig:noImplementa}
+        \end{figure}
+        
+    \item No contiene anotaciones. 
+        \begin{figure}[H] 
+        \lstinputlisting[style=customc]{capitulos/disenoBaseDatos/codigo/noAnotaciones.java}
+        \label{fig:noAnotaciones}
+        \end{figure}
+\end{itemize}
+
+Los POJO fueron inicialmente utilizados en J2EE para representar los JavaBeans, que son objetos java muy simples y que ofrecen servicios por la red. Se siguen utilizando aunque han cambiado un poco las formas de hacerlo. Ahora los POJO también son ampliamente utilizados para representar objetos JSON recibidos por parte de microservicios web y ser utilizados en un servidor. Este es uno de los muchos ejemplos de utilización real a día de hoy de los POJO. 
+
+\subsubsection{Ejemplo}
+
+Vamos a explicar con un sencillo ejemplo lo que son los POJO y como se hace la consulta de los mismos para luego mostrar la información dentro de la aplicación.
+
+En este caso uno de los atributos que nos interesa son las diferentes notas que tiene cada uno de los pigmentos, para ello habrá una tabla con todas las notas de todos los pigmentos. Como hemos enseñado en el modelado conceptual, de cada una de las diferentes notas almacenamos y guardamos los siguientes datos: 
+\begin{itemize}
+    \item IdPigmento: para poder relacionar la nota con el pigmento, este dato es interno para la gestión de los datos. 
+    \item Título: breve descripción.
+    \item Descripción: contenido completo de la nota. 
+    \item Fecha: fecha de creación de la misma. 
+\end{itemize}
+
+La descripción anterior la podemos encontrar representada por un POJO en el siguiente fragmento de cñodigo Java: 
+
+\begin{figure}[H] 
+\lstinputlisting[style=customc]{capitulos/disenoBaseDatos/codigo/notaPojo.java}
+\label{fig:notaPojo}
+\end{figure}
+
+
+
