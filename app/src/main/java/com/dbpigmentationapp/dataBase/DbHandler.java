@@ -28,29 +28,12 @@ public class DbHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = String.format("create table %s (%s int primary key, " +
-                        "%s text, " +
-                        "%s text, " +
-                        "%s text," +
-                        "%s float," +
-                        "%s float, " +
-                        "%s text, " +
-                        "%s text)", DbDefinition.TABLA_PIGMENTOS,
-                DbDefinition.ID,
-                DbDefinition.ID_COLOR,
-                DbDefinition.NOMBRE,
-                DbDefinition.COLOR_PIGMENTO,
-                DbDefinition.POTENCIA,
-                DbDefinition.LAMBDA,
-                DbDefinition.FORMULA,
-                DbDefinition.ELEMENTO_QUIMICO);
         FilesReader mQuoteBank = new FilesReader(activity);
-        String finalFile = "";
-        List<String> mLines = mQuoteBank.readLine("hola.txt");
+        StringBuilder sql = new StringBuilder();
+        List<String> mLines = mQuoteBank.readLine("creation.sql");
         for (String string : mLines)
-            finalFile = finalFile + string;
-        System.out.println(finalFile);
-        db.execSQL(sql);
+            sql.append(string);
+        db.execSQL(sql.toString());
     }
 
     @Override

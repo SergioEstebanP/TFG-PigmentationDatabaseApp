@@ -13,7 +13,7 @@ public class DbDefinition {
     public static final String TABLA_PIGMENTOS = "Pigmento";
     public static final String ID_COLOR = "idColor";
     public static final String NOMBRE = "nombre";
-    public static final String COLOR_PIGMENTO = "colorPigmento";
+    public static final String COLOR_PIGMENTO = "color";
     public static final String POTENCIA = "potencia";
     public static final String LAMBDA = "lambda";
     public static final String FORMULA = "formula";
@@ -32,8 +32,8 @@ public class DbDefinition {
     public static final String[] COLUMNAS_SINONIMOS = {ID, VALOR};
 
     // Tablas datos (Ir, Rx, Raman y parte de Colorimetria)
-    public static final String TABLA_IR = "Ir";
-    public static final String TABLA_RX = "Rx";
+    public static final String TABLA_IR = "Infrarrojos";
+    public static final String TABLA_RX = "RayosX";
     public static final String TABLA_RAMAN = "Raman";
     public static final String X = "x";
     public static final String Y = "y";
