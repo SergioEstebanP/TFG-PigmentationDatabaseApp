@@ -2,19 +2,19 @@ package com.dbpigmentationapp.dataModel;
 
 public class Nota {
 
-    private int idPigmento;
+    private String idPigmento;
     private String titulo;
     private String descripcion;
 
     // Constructor por defecto
     public Nota () {
-        this.idPigmento = 0;
+        this.idPigmento = "0";
         this.titulo = "Título";
         this.descripcion = "Breve descripción";
     }
 
     // Constructor con parametros
-    public Nota (int idPigmento, String titulo, String descripcion) {
+    public Nota (String idPigmento, String titulo, String descripcion) {
         this.idPigmento = idPigmento;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -37,11 +37,11 @@ public class Nota {
         this.descripcion = descripcion;
     }
 
-    public int getIdPigmento() {
+    public String getIdPigmento() {
         return idPigmento;
     }
 
-    public void setIdPigmento(int idPigmento) {
+    public void setIdPigmento(String idPigmento) {
         this.idPigmento = idPigmento;
     }
 }

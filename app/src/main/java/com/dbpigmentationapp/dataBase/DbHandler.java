@@ -49,12 +49,12 @@ public class DbHandler extends SQLiteOpenHelper {
     // *******************************
 
     // OBTENER PIGMENTO POR ID
-    public Pigmento getPigmento(int id) {
+    public Pigmento getPigmento(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(DbDefinition.TABLA_PIGMENTOS,
                 DbDefinition.COLUMNAS_PIGMENTO,
                 " id = ?",
-                new String[]{String.valueOf(id)},
+                new String[]{id},
                 null,
                 null,
                 null,
@@ -62,7 +62,7 @@ public class DbHandler extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
         Pigmento pigmento = new Pigmento();
-        pigmento.setIdPigmento(Integer.parseInt(cursor.getString(0)));
+        pigmento.setIdPigmento(cursor.getString(0));
         pigmento.setIdColor(cursor.getString(1));
         pigmento.setNombre(cursor.getString(2));
         pigmento.setColor(cursor.getString(3));
@@ -70,6 +70,7 @@ public class DbHandler extends SQLiteOpenHelper {
         pigmento.setLambda(Float.parseFloat(cursor.getString(5)));
         pigmento.setFormula(cursor.getString(6));
         pigmento.setElementoQuimico(cursor.getString(7));
+        pigmento.setDescripcion(cursor.getString(8));
         return pigmento;
     }
 
@@ -83,7 +84,7 @@ public class DbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 pigmento = new Pigmento();
-                pigmento.setIdPigmento(Integer.parseInt(cursor.getString(0)));
+                pigmento.setIdPigmento(cursor.getString(0));
                 pigmento.setIdColor(cursor.getString(1));
                 pigmento.setNombre(cursor.getString(2));
                 pigmento.setColor(cursor.getString(3));
@@ -91,6 +92,7 @@ public class DbHandler extends SQLiteOpenHelper {
                 pigmento.setLambda(Float.parseFloat(cursor.getString(5)));
                 pigmento.setFormula(cursor.getString(6));
                 pigmento.setElementoQuimico(cursor.getString(7));
+                pigmento.setDescripcion(cursor.getString(8));
                 pigmentos.add(pigmento);
             } while (cursor.moveToNext());
         }
@@ -114,7 +116,7 @@ public class DbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 pigmento = new Pigmento();
-                pigmento.setIdPigmento(Integer.parseInt(cursor.getString(0)));
+                pigmento.setIdPigmento(cursor.getString(0));
                 pigmento.setIdColor(cursor.getString(1));
                 pigmento.setNombre(cursor.getString(2));
                 pigmento.setColor(cursor.getString(3));
@@ -122,6 +124,7 @@ public class DbHandler extends SQLiteOpenHelper {
                 pigmento.setLambda(Float.parseFloat(cursor.getString(5)));
                 pigmento.setFormula(cursor.getString(6));
                 pigmento.setElementoQuimico(cursor.getString(7));
+                pigmento.setDescripcion(cursor.getString(8));
                 pigmentos.add(pigmento);
             } while (cursor.moveToNext());
         }
@@ -140,6 +143,7 @@ public class DbHandler extends SQLiteOpenHelper {
         values.put(DbDefinition.LAMBDA, pigmento.getLmabda());
         values.put(DbDefinition.FORMULA, pigmento.getFormula());
         values.put(DbDefinition.ELEMENTO_QUIMICO, pigmento.getElementoQuimico());
+        values.put(DbDefinition.DESCRIPCION, pigmento.getDescripcion());
         db.insertWithOnConflict(DbDefinition.TABLA_PIGMENTOS, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         db.close();
     }
@@ -177,7 +181,7 @@ public class DbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 nota = new Nota();
-                nota.setIdPigmento(Integer.parseInt(cursor.getString(0)));
+                nota.setIdPigmento(cursor.getString(0));
                 nota.setTitulo(cursor.getString(1));
                 nota.setDescripcion(cursor.getString(2));
                 notas.add(nota);
@@ -216,7 +220,7 @@ public class DbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 sinonimo = new Sinonimo();
-                sinonimo.setIdPigmento(Integer.parseInt(cursor.getString(0)));
+                sinonimo.setIdPigmento(cursor.getString(0));
                 sinonimo.setValor(cursor.getString(1));
                 sinonimos.add(sinonimo);
             } while (cursor.moveToNext());
@@ -275,7 +279,7 @@ public class DbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 data = new TuplaDatos();
-                data.setIdPigmento(Integer.parseInt(cursor.getString(0)));
+                data.setIdPigmento(cursor.getString(0));
                 data.setX(Float.parseFloat(cursor.getString(1)));
                 data.setY(Float.parseFloat(cursor.getString(2)));
                 dataSet.add(data);
@@ -304,7 +308,7 @@ public class DbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 color = new Colorimetria();
-                color.setIdPigmento(Integer.parseInt(cursor.getString(0)));
+                color.setIdPigmento(cursor.getString(0));
                 color.setL(Float.parseFloat(cursor.getString(1)));
                 color.setA(Float.parseFloat(cursor.getString(2)));
                 color.setB(Float.parseFloat(cursor.getString(3)));

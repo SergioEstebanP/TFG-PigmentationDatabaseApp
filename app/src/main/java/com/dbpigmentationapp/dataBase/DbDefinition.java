@@ -18,12 +18,12 @@ public class DbDefinition {
     public static final String LAMBDA = "lambda";
     public static final String FORMULA = "formula";
     public static final String ELEMENTO_QUIMICO = "elementoQuimico";
-    public static final String[] COLUMNAS_PIGMENTO = {ID, ID_COLOR, NOMBRE, COLOR_PIGMENTO, POTENCIA, LAMBDA, FORMULA, ELEMENTO_QUIMICO};
+    public static final String DESCRIPCION = "descripcion";
+    public static final String[] COLUMNAS_PIGMENTO = {ID, ID_COLOR, NOMBRE, COLOR_PIGMENTO, POTENCIA, LAMBDA, FORMULA, ELEMENTO_QUIMICO, DESCRIPCION};
 
     // Tabla Notas
     public static final String TABLA_NOTAS = "Nota";
     public static final String TITULO = "titulo";
-    public static final String DESCRIPCION = "descripcion";
     public static final String[] COLUMNAS_NOTAS = {ID, TITULO, DESCRIPCION};
 
     // Tabla Sinonimos

@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS Pigmento (
-    id              INTEGER NOT NULL,
+    id              TEXT NOT NULL,
     idColor         TEXT,
     nombre          TEXT,
     color           TEXT,
@@ -7,11 +7,12 @@ CREATE TABLE IF NOT EXISTS Pigmento (
     lambda          REAL,
     formula         TEXT,
     elementoQuimico TEXT,
+    descripcion     TEXT,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE IF NOT EXISTS Nota (
-    id              INTEGER NOT NULL,
+    id              TEXT NOT NULL,
     titulo          TEXT,
     descripcion     TEXT,
     PRIMARY KEY(id, titulo),
@@ -19,14 +20,14 @@ CREATE TABLE IF NOT EXISTS Nota (
 );
 
 CREATE TABLE IF NOT EXISTS Sinonimo (
-    id              INTEGER NOT NULL,
+    id              TEXT NOT NULL,
     valor           TEXT,
     PRIMARY KEY(id, valor),
     FOREIGN KEY (id) REFERENCES Pigmento (id)
 );
 
 CREATE TABLE IF NOT EXISTS Infrarrojos (
-    id              INTEGER NOT NULL,
+    id              TEXT NOT NULL,
     x               REAL,
     y               REAL,
     PRIMARY KEY(id, x, y),
@@ -34,7 +35,7 @@ CREATE TABLE IF NOT EXISTS Infrarrojos (
 );
 
 CREATE TABLE IF NOT EXISTS RayosX (
-    id              INTEGER NOT NULL,
+    id              TEXT NOT NULL,
     x               REAL,
     y               REAL,
     PRIMARY KEY(id, x, y),
@@ -42,7 +43,7 @@ CREATE TABLE IF NOT EXISTS RayosX (
 );
 
 CREATE TABLE IF NOT EXISTS Raman (
-    id              INTEGER NOT NULL,
+    id              TEXT NOT NULL,
     x               REAL,
     y               REAL,
     PRIMARY KEY(id, x, y),
@@ -50,7 +51,7 @@ CREATE TABLE IF NOT EXISTS Raman (
 );
 
 CREATE TABLE IF NOT EXISTS Colorimetria (
-    id              INTEGER NOT NULL,
+    id              TEXT NOT NULL,
     x               REAL,
     y               REAL,
     z               REAL,

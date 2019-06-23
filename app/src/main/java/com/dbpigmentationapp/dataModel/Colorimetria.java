@@ -1,7 +1,7 @@
 package com.dbpigmentationapp.dataModel;
 
 public class Colorimetria {
-    private int idPigmento;
+    private String idPigmento;
     private float l;
     private float a;
     private float b;
@@ -9,7 +9,7 @@ public class Colorimetria {
     private float y;
     private float z;
 
-    public Colorimetria(int idPigmento, float l, float a, float b, float x, float y, float z) {
+    public Colorimetria(String idPigmento, float l, float a, float b, float x, float y, float z) {
         this.idPigmento = idPigmento;
         this.l = l;
         this.a = a;
@@ -20,7 +20,7 @@ public class Colorimetria {
     }
 
     public Colorimetria() {
-        this.idPigmento = 0;
+        this.idPigmento = "0";
         this.l = 0;
         this.a = 0;
         this.b = 0;
@@ -29,11 +29,11 @@ public class Colorimetria {
         this.z = 0;
     }
 
-    public int getIdPigmento() {
+    public String getIdPigmento() {
         return idPigmento;
     }
 
-    public void setIdPigmento(int idPigmento) {
+    public void setIdPigmento(String idPigmento) {
         this.idPigmento = idPigmento;
     }
 
