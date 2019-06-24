@@ -18,9 +18,15 @@ import android.widget.TextView;
 
 import com.dbpigmentationapp.R;
 import com.dbpigmentationapp.ServicesSupport.GlobalState;
+import com.dbpigmentationapp.dataBase.DbHandler;
 import com.dbpigmentationapp.dataModel.Colorimetria;
+import com.dbpigmentationapp.dataModel.Sinonimo;
+
+import java.util.List;
 
 public class InformacionPigmentoFragment extends Fragment {
+
+    private DbHandler db;
 
     private TextView nombre;
     private CardView color;
@@ -39,6 +45,16 @@ public class InformacionPigmentoFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        db = new DbHandler(this.getContext());
+        List<Sinonimo> sinonimos = db.todosSinonimosPigmento("id", GlobalState.PIGMENTO_SELECCIONADO.getIdPigmento());
+        String sinonimoValue;
+        if (sinonimos.size() > 1) {
+            sinonimoValue = sinonimos.get(1).getValor();
+        } else {
+            sinonimoValue = sinonimos.get(0).getValor();
+        }
+
         View view = inflater.inflate(R.layout.fragment_informacion_pigmento, container, false);
 
         nombre = view.findViewById(R.id.nombrePigmento);
@@ -53,14 +69,14 @@ public class InformacionPigmentoFragment extends Fragment {
 
         Colorimetria aux = GlobalState.COLOR_SELECCIONADO;
         color.setCardBackgroundColor(ColorUtils.LABToColor(aux.getL(), aux.getA(), aux.getB()));
-        //sinonimo.setText();
+        sinonimo.setText(sinonimoValue);
         formula.setText(GlobalState.PIGMENTO_SELECCIONADO.getFormula());
         elemento.setText(GlobalState.PIGMENTO_SELECCIONADO.getElementoQuimico());
         coordenadasTricromicas.setText(GlobalState.COLOR_SELECCIONADO.getL() + "-" + GlobalState.COLOR_SELECCIONADO.getA() + "-" + GlobalState.COLOR_SELECCIONADO.getB());
         colorBase.setText(GlobalState.PIGMENTO_SELECCIONADO.getIdColor());
 
         colorimetria = view.findViewById(R.id.imgColorimetria);
-        descColorimetria = view.findViewById(R.id.descColorimetria);
+        descColorimetria = view.findViewById(R.id.colorimetriaDesKey);
         descColorimetria.setVisibility(View.GONE);
 
         animationUp = AnimationUtils.loadAnimation(view.getContext(), R.anim.slide_up);

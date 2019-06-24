@@ -4,6 +4,8 @@ import android.content.Context;
 
 import com.dbpigmentationapp.dataModel.Colorimetria;
 import com.dbpigmentationapp.dataModel.Pigmento;
+import com.dbpigmentationapp.dataModel.Sinonimo;
+import com.dbpigmentationapp.dataModel.TuplaDatos;
 
 import java.util.List;
 
@@ -13,31 +15,33 @@ public class DataCreation {
     public static void createBulkData(DbHandler db, Context activity) {
         inicializarPigmentos(db, activity);
         inicializarColores(db, activity);
+        inicializarSinonimos(db, activity);
 //        inicializarIr(db, activity);
-//        inicializarRx(db, activity);
-//        inicializarRaman(db, activity);
-//        inicializarNotas(db, activity);
-//        inicializarSinonimos(db, activity);
-    }
-
-    private static void inicializarSinonimos(DbHandler db, Context activity) {
-
-    }
-
-    private static void inicializarNotas(DbHandler db, Context activity) {
-
-    }
-
-    private static void inicializarRaman(DbHandler db, Context activity) {
-
-    }
-
-    private static void inicializarRx(DbHandler db, Context activity) {
-
     }
 
     private static void inicializarIr(DbHandler db, Context activity) {
+        FilesReader mQuoteBank = new FilesReader(activity);
+        List<String> mLines = mQuoteBank.readLine("dataIr.csv");
+        for (String line : mLines) {
+            String[] valores = line.split(";");
+            TuplaDatos data = new TuplaDatos();
+            data.setIdPigmento(valores[0]);
+            data.setX(Float.parseFloat(valores[1].replace(",",".")));
+            data.setY(Float.parseFloat(valores[2].replace(",",".")));
+            db.addTuplaDatos(data, "Infrarrojos");
+        }
+    }
 
+    private static void inicializarSinonimos(DbHandler db, Context activity) {
+        FilesReader mQuoteBank = new FilesReader(activity);
+        List<String> mLines = mQuoteBank.readLine("dataSinonimos.csv");
+        for (String line : mLines) {
+            String[] valores = line.split(";");
+            Sinonimo sinonimo = new Sinonimo();
+            sinonimo.setIdPigmento(valores[0]);
+            sinonimo.setValor(valores[1]);
+            db.addSinonimo(sinonimo);
+        }
     }
 
     private static void inicializarColores(DbHandler db, Context activity) {

@@ -204,13 +204,13 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     // OBTENER TODOS LOS SINONIMOS DE UN PIGMENTO DADO SU NOMBRE
-    public List<Sinonimo> todosSinonimosPigmento(String parametro) {
+    public List<Sinonimo> todosSinonimosPigmento(String parametro, String value) {
         List<Sinonimo> sinonimos = new LinkedList<>();
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.query(DbDefinition.TABLA_SINONIMOS,
                 DbDefinition.COLUMNAS_SINONIMOS,
                 " " + parametro + " = ?",
-                new String[]{String.valueOf(parametro)},
+                new String[]{String.valueOf(value)},
                 null,
                 null,
                 null,
@@ -240,8 +240,8 @@ public class DbHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(DbDefinition.ID, data.getIdPigmento());
-        values.put(DbDefinition.VALOR, data.getX());
-        values.put(DbDefinition.VALOR, data.getY());
+        values.put(DbDefinition.X, data.getX());
+        values.put(DbDefinition.Y, data.getY());
         db.insertWithOnConflict(tabla, null, values, SQLiteDatabase.CONFLICT_IGNORE);
         db.close();
     }
