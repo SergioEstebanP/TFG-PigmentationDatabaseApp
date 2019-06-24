@@ -63,6 +63,7 @@
                 android:background="@drawable/cell_shape">
 
                 <TextView
+                    android:id="@+id/keySinonimo"
                     android:layout_weight="1"
                     android:padding="10dip"
                     android:text="Sinónimo"
@@ -70,6 +71,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueSinonimo"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
@@ -85,17 +87,19 @@
                 android:background="@drawable/cell_shape1">
 
                 <TextView
+                    android:id="@+id/keyFormula"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Elemento químico"
+                    android:text="Formula"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueFormula"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="Cadmio [CD]"
+                    android:text="NaBrS"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -105,17 +109,19 @@
                 android:background="@drawable/cell_shape">
 
                 <TextView
+                    android:id="@+id/keyElemento"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Coordenadas tricrómicas"
+                    android:text="Elemento Químico"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueElemento"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="L a b"
+                    android:text="Cd"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -125,17 +131,19 @@
                 android:background="@drawable/cell_shape1">
 
                 <TextView
+                    android:id="@+id/keyCoordenadas"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Otra información "
+                    android:text="Coord. Tricrómicas"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueCoordenadas"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="info "
+                    android:text="100-45-54"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -145,17 +153,19 @@
                 android:background="@drawable/cell_shape">
 
                 <TextView
+                    android:id="@+id/keyColorBase"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Otra información "
+                    android:text="Color Base"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueColorBase"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="info "
+                    android:text="Azul"
                     android:textColor="#000000" />
             </TableRow>
 

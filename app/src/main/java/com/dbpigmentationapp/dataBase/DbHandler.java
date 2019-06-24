@@ -29,11 +29,10 @@ public class DbHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         FilesReader mQuoteBank = new FilesReader(activity);
-        StringBuilder sql = new StringBuilder();
         List<String> mLines = mQuoteBank.readLine("creation.sql");
-        for (String string : mLines)
-            sql.append(string);
-        db.execSQL(sql.toString());
+        for (String sqlStatement : mLines) {
+            db.execSQL(sqlStatement);
+        }
     }
 
     @Override
@@ -190,7 +189,7 @@ public class DbHandler extends SQLiteOpenHelper {
         return notas;
     }
 
-     // ******************************
+    // ******************************
     // OPERACIONES TABLA SINONIMOS   *
     // *******************************
 
@@ -256,13 +255,13 @@ public class DbHandler extends SQLiteOpenHelper {
         String[] columnas = new String[0];
         switch (tabla) {
             case DbDefinition.TABLA_IR:
-                columnas = DbDefinition.COLUMNAS_IR ;
+                columnas = DbDefinition.COLUMNAS_IR;
                 break;
             case DbDefinition.TABLA_RX:
-                columnas = DbDefinition.COLUMNAS_RX ;
+                columnas = DbDefinition.COLUMNAS_RX;
                 break;
             case DbDefinition.TABLA_RAMAN:
-                columnas = DbDefinition.COLUMNAS_RAMAN ;
+                columnas = DbDefinition.COLUMNAS_RAMAN;
                 break;
         }
         List<TuplaDatos> dataSet = new LinkedList<>();
@@ -292,9 +291,23 @@ public class DbHandler extends SQLiteOpenHelper {
     // OPERACIONES TABLA COLORIMETRIA *
     // ********************************
 
+    // AÑADIR DATOS COLORIMETRIA
+    public void addColorimetria(Colorimetria data) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(DbDefinition.ID, data.getIdPigmento());
+        values.put(DbDefinition.L, data.getL());
+        values.put(DbDefinition.A, data.getA());
+        values.put(DbDefinition.B, data.getB());
+        values.put(DbDefinition.X, data.getX());
+        values.put(DbDefinition.Y, data.getY());
+        values.put(DbDefinition.Z, data.getZ());
+        db.insertWithOnConflict(DbDefinition.TABLA_COLORIMETRIA, null, values, SQLiteDatabase.CONFLICT_IGNORE);
+        db.close();
+    }
+
     // OBTENER TODOS LOS DATOS DE COLORIMETRIA DE UN PIGMENTO
-    public List<Colorimetria> todosDatosColorimetria(int idPigmento) {
-        List<Colorimetria> colores = new LinkedList<>();
+    public Colorimetria getColorimetria(String idPigmento) {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.query(DbDefinition.TABLA_COLORIMETRIA,
                 DbDefinition.COLUMNAS_COLORIMETRIA,
@@ -304,22 +317,17 @@ public class DbHandler extends SQLiteOpenHelper {
                 null,
                 null,
                 null);
-        Colorimetria color;
+        Colorimetria color = new Colorimetria();
         if (cursor.moveToFirst()) {
-            do {
-                color = new Colorimetria();
-                color.setIdPigmento(cursor.getString(0));
-                color.setL(Float.parseFloat(cursor.getString(1)));
-                color.setA(Float.parseFloat(cursor.getString(2)));
-                color.setB(Float.parseFloat(cursor.getString(3)));
-                color.setX(Float.parseFloat(cursor.getString(4)));
-                color.setY(Float.parseFloat(cursor.getString(5)));
-                color.setZ(Float.parseFloat(cursor.getString(6)));
-                colores.add(color);
-            } while (cursor.moveToNext());
+            color.setIdPigmento(cursor.getString(0));
+            color.setL(Float.parseFloat(cursor.getString(1)));
+            color.setA(Float.parseFloat(cursor.getString(2)));
+            color.setB(Float.parseFloat(cursor.getString(3)));
+            color.setX(Float.parseFloat(cursor.getString(4)));
+            color.setY(Float.parseFloat(cursor.getString(5)));
+            color.setZ(Float.parseFloat(cursor.getString(6)));
         }
-        return colores;
+        return color;
     }
-
 }
 

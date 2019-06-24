@@ -1,7 +1,13 @@
 package com.dbpigmentationapp.subMenus.finalViews;
 
 import android.app.Fragment;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.RequiresApi;
+import android.support.v4.graphics.ColorUtils;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +17,47 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.dbpigmentationapp.R;
+import com.dbpigmentationapp.ServicesSupport.GlobalState;
+import com.dbpigmentationapp.dataModel.Colorimetria;
 
 public class InformacionPigmentoFragment extends Fragment {
+
+    private TextView nombre;
+    private CardView color;
+    private TextView sinonimo;
+    private TextView formula;
+    private TextView elemento;
+    private TextView coordenadasTricromicas;
+    private TextView colorBase;
+
 
     private ImageView colorimetria;
     private TextView descColorimetria;
     private Animation animationUp;
     private Animation animationDown;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_informacion_pigmento, container, false);
+
+        nombre = view.findViewById(R.id.nombrePigmento);
+        color = view.findViewById(R.id.colorPigmento);
+        sinonimo = view.findViewById(R.id.valueSinonimo);
+        formula = view.findViewById(R.id.valueFormula);
+        elemento = view.findViewById(R.id.valueElemento);
+        coordenadasTricromicas = view.findViewById(R.id.valueCoordenadas);
+        colorBase = view.findViewById(R.id.valueColorBase);
+
+        nombre.setText(GlobalState.PIGMENTO_SELECCIONADO.getNombre());
+
+        Colorimetria aux = GlobalState.COLOR_SELECCIONADO;
+        color.setCardBackgroundColor(ColorUtils.LABToColor(aux.getL(), aux.getA(), aux.getB()));
+        //sinonimo.setText();
+        formula.setText(GlobalState.PIGMENTO_SELECCIONADO.getFormula());
+        elemento.setText(GlobalState.PIGMENTO_SELECCIONADO.getElementoQuimico());
+        coordenadasTricromicas.setText(GlobalState.COLOR_SELECCIONADO.getL() + "-" + GlobalState.COLOR_SELECCIONADO.getA() + "-" + GlobalState.COLOR_SELECCIONADO.getB());
+        colorBase.setText(GlobalState.PIGMENTO_SELECCIONADO.getIdColor());
 
         colorimetria = view.findViewById(R.id.imgColorimetria);
         descColorimetria = view.findViewById(R.id.descColorimetria);
