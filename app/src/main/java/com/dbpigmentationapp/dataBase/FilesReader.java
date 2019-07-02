@@ -27,8 +27,10 @@ public class FilesReader {
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             String line;
 
-            while ((line = reader.readLine()) != null)
-                mLines.add(line);
+            while ((line = reader.readLine()) != null) {
+                if (!line.equals(""))
+                    mLines.add(line);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

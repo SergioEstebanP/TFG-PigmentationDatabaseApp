@@ -189,7 +189,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="50dp"
             app:cardElevation="8dp">
 
@@ -210,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="15dp"
                         android:gravity="center"
-                        android:text="COLORIMETRÍA"
+                        android:text="COLORIMETRIA"
                         android:textColor="#000"
                         android:textSize="16sp" />
 
@@ -223,14 +223,30 @@
 
                 </LinearLayout>
 
-                <TextView
+                <android.support.v7.widget.CardView
                     android:id="@+id/colorimetriaDesValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Coordenadas Colorimétricas" />
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/colorimetriaChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
             </LinearLayout>
         </android.support.v7.widget.CardView>
-
 
         <android.support.v7.widget.CardView
             android:id="@+id/ftiratr"
@@ -273,11 +289,28 @@
 
                 </LinearLayout>
 
-                <TextView
+                <android.support.v7.widget.CardView
                     android:id="@+id/ftiratrDesValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Infrmación Infrarrojos" />
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/irChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
@@ -323,11 +356,27 @@
 
                 </LinearLayout>
 
-                <TextView
+                <android.support.v7.widget.CardView
                     android:id="@+id/drxDesValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Información difractograma de rayos x" />
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/rxChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 

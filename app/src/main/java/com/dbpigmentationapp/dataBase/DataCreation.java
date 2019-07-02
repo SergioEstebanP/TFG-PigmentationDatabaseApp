@@ -2,12 +2,17 @@ package com.dbpigmentationapp.dataBase;
 
 import android.content.Context;
 
+import com.dbpigmentationapp.ServicesSupport.GlobalState;
 import com.dbpigmentationapp.dataModel.Colorimetria;
 import com.dbpigmentationapp.dataModel.Pigmento;
 import com.dbpigmentationapp.dataModel.Sinonimo;
 import com.dbpigmentationapp.dataModel.TuplaDatos;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import lecho.lib.hellocharts.model.AxisValue;
+import lecho.lib.hellocharts.model.PointValue;
 
 public class DataCreation {
 
@@ -26,8 +31,8 @@ public class DataCreation {
             String[] valores = line.split(";");
             TuplaDatos data = new TuplaDatos();
             data.setIdPigmento(valores[0]);
-            data.setX(Float.parseFloat(valores[1].replace(",",".")));
-            data.setY(Float.parseFloat(valores[2].replace(",",".")));
+            data.setX(Float.parseFloat(valores[1].replace(",", ".")));
+            data.setY(Float.parseFloat(valores[2].replace(",", ".")));
             db.addTuplaDatos(data, "Infrarrojos");
         }
     }
@@ -116,5 +121,41 @@ public class DataCreation {
                 pigmento.setDescripcion(valores[1]);
             }
         }
+    }
+
+    public static void getDataIr(Pigmento pigmento, Context activity) {
+        FilesReader mQuoteBank = new FilesReader(activity);
+        List<String> mLines = mQuoteBank.readLine("dataIr.csv");
+        List yValues = new ArrayList();
+        List xValues = new ArrayList();
+        int i = 0;
+        for (String line : mLines) {
+            String[] valores = line.split(";");
+            if (pigmento.getIdPigmento().equals(valores[0])) {
+                xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
+                yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
+                i++;
+            }
+        }
+        GlobalState.X_IR_AXIS = xValues;
+        GlobalState.Y_IR_AXIS = yValues;
+    }
+
+    public static void getDataRx(Pigmento pigmento, Context context) {
+        FilesReader mQuoteBank = new FilesReader(context);
+        List<String> mLines = mQuoteBank.readLine("dataRx.csv");
+        List yValues = new ArrayList();
+        List xValues = new ArrayList();
+        int i = 0;
+        for (String line : mLines) {
+            String[] valores = line.split(";");
+            if (pigmento.getIdPigmento().equals(valores[0])) {
+                xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
+                yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
+                i++;
+            }
+        }
+        GlobalState.X_RX_AXIS = xValues;
+        GlobalState.Y_RX_AXIS = yValues;
     }
 }
