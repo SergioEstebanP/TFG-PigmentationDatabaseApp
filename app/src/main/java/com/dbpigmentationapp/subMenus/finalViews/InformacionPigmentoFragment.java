@@ -170,6 +170,27 @@ public class InformacionPigmentoFragment extends Fragment {
                 }
             }
         });
+
+        // RAMAN
+        DataCreation.getRamanData(GlobalState.PIGMENTO_SELECCIONADO, this.getContext());
+        chartRaman = view.findViewById(R.id.ramanDesValue);
+        chartRaman.setVisibility(View.GONE);
+        imgRaman = view.findViewById(R.id.imgRaman);
+        ramanChart = view.findViewById(R.id.ramanChartView);
+
+        createChart(GlobalState.Y_RX_AXIS, GlobalState.X_RX_AXIS, ramanChart);
+        imgRaman.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (chartRaman.isShown()) {
+                    chartRaman.setVisibility(View.GONE);
+                    chartRaman.startAnimation(animationUp);
+                } else {
+                    chartRaman.setVisibility(View.VISIBLE);
+                    chartRaman.startAnimation(animationDown);
+                }
+            }
+        });
         return view;
     }
 
@@ -179,6 +200,7 @@ public class InformacionPigmentoFragment extends Fragment {
         Line line = new Line(yAxisValues);
         line.setHasPoints(false);
         line.setColor(Color.parseColor(BLACK_COLOR));
+        line.setStrokeWidth(1);
         List lines = new ArrayList();
         lines.add(line);
         LineChartData data = new LineChartData();

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/device_info_fragment"
-        android:name="com.dbpigmentationapp.subMenus.ConsultaSimpleFragment"
+        android:name="com.dbpigmentationapp.subMenus.ConsultaSimpleFancy"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

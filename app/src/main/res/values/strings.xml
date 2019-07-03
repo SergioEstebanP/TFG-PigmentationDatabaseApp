@@ -10,4 +10,7 @@
     <string name="graficas">Gráficas</string>
     <string name="añadirPigmento">Añadir Pigmento</string>
     <string name="configuracion">Reportar Bug</string>
+    <string name="consulta_por_nombre">Filtrar por nombre</string>
+    <string name="consulta_por_color">Buscar por color</string>
+    <string name="consulta_por_elemento">Ordenar por elemento quimico</string>
 </resources>

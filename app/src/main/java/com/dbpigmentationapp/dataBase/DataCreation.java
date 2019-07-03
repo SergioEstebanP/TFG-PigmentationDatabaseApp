@@ -131,10 +131,12 @@ public class DataCreation {
         int i = 0;
         for (String line : mLines) {
             String[] valores = line.split(";");
-            if (pigmento.getIdPigmento().equals(valores[0])) {
-                xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
-                yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
-                i++;
+            if (valores.length > 1) {
+                if (pigmento.getIdPigmento().equals(valores[0])) {
+                    xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
+                    yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
+                    i++;
+                }
             }
         }
         GlobalState.X_IR_AXIS = xValues;
@@ -149,10 +151,32 @@ public class DataCreation {
         int i = 0;
         for (String line : mLines) {
             String[] valores = line.split(";");
-            if (pigmento.getIdPigmento().equals(valores[0])) {
-                xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
-                yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
-                i++;
+            if (valores.length > 1) {
+                if (pigmento.getIdPigmento().equals(valores[0])) {
+                    xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
+                    yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
+                    i++;
+                }
+            }
+        }
+        GlobalState.X_RX_AXIS = xValues;
+        GlobalState.Y_RX_AXIS = yValues;
+    }
+
+    public static void getRamanData(Pigmento pigmento, Context context) {
+        FilesReader mQuoteBank = new FilesReader(context);
+        List<String> mLines = mQuoteBank.readLine("dataRaman.csv");
+        List yValues = new ArrayList();
+        List xValues = new ArrayList();
+        int i = 0;
+        for (String line : mLines) {
+            String[] valores = line.split(";");
+            if (valores.length > 1) {
+                if (pigmento.getIdPigmento().equals(valores[0])) {
+                    xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
+                    yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
+                    i++;
+                }
             }
         }
         GlobalState.X_RX_AXIS = xValues;
