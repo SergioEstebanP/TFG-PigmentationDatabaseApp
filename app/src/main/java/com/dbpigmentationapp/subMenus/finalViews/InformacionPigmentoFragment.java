@@ -174,15 +174,20 @@ public class InformacionPigmentoFragment extends Fragment {
     }
 
     private void createChart(List yIrAxis, List xIrAxis, LineChartView chart) {
+        final String BLACK_COLOR = "#000000";
         List yAxisValues = yIrAxis;
         Line line = new Line(yAxisValues);
         line.setHasPoints(false);
-        line.setColor(Color.parseColor("#4266f5"));
+        line.setColor(Color.parseColor(BLACK_COLOR));
         List lines = new ArrayList();
         lines.add(line);
         LineChartData data = new LineChartData();
         Axis yAxis = new Axis();
+        yAxis.setLineColor(Color.parseColor(BLACK_COLOR));
+        yAxis.setTextColor(Color.parseColor(BLACK_COLOR));
         Axis xAxis = new Axis();
+        xAxis.setLineColor(Color.parseColor(BLACK_COLOR));
+        xAxis.setTextColor(Color.parseColor(BLACK_COLOR));
         data.setAxisYLeft(yAxis);
         data.setAxisXBottom(xAxis);
         data.setLines(lines);
