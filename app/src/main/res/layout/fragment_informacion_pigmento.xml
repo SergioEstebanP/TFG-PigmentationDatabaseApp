@@ -63,6 +63,7 @@
                 android:background="@drawable/cell_shape">
 
                 <TextView
+                    android:id="@+id/keySinonimo"
                     android:layout_weight="1"
                     android:padding="10dip"
                     android:text="Sinónimo"
@@ -70,6 +71,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueSinonimo"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
@@ -85,17 +87,19 @@
                 android:background="@drawable/cell_shape1">
 
                 <TextView
+                    android:id="@+id/keyFormula"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Elemento químico"
+                    android:text="Formula"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueFormula"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="Cadmio [CD]"
+                    android:text="NaBrS"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -105,17 +109,19 @@
                 android:background="@drawable/cell_shape">
 
                 <TextView
+                    android:id="@+id/keyElemento"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Coordenadas tricrómicas"
+                    android:text="Elemento Químico"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueElemento"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="L a b"
+                    android:text="Cd"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -125,17 +131,19 @@
                 android:background="@drawable/cell_shape1">
 
                 <TextView
+                    android:id="@+id/keyCoordenadas"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Otra información "
+                    android:text="Coord. Tricrómicas"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueCoordenadas"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="info "
+                    android:text="100-45-54"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -145,17 +153,19 @@
                 android:background="@drawable/cell_shape">
 
                 <TextView
+                    android:id="@+id/keyColorBase"
                     android:layout_weight="1"
                     android:padding="10dip"
-                    android:text="Otra información "
+                    android:text="Color Base"
                     android:textColor="#000000"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/valueColorBase"
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dip"
-                    android:text="info "
+                    android:text="Azul"
                     android:textColor="#000000" />
             </TableRow>
 
@@ -179,6 +189,72 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="50dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f1f7b4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/colorimetriaDesKey"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:gravity="center"
+                        android:text="COLORIMETRIA"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgColorimetria"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="11dp"
+                        android:background="@drawable/down_arrow" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/colorimetriaDesValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/colorimetriaChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/ftiratr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             app:cardElevation="8dp">
@@ -188,38 +264,59 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="#f1f7b4">
-
-                <TextView
-                    android:layout_width="230dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:gravity="center"
-                    android:text="Colorimetría"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
+                    android:background="#c5f7c5"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imgColorimetria"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="11dp"
-                    android:background="@drawable/down_arrow" />
+                    <TextView
+                        android:id="@+id/ftrAtrDesKey"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:gravity="center"
+                        android:text="FTIR-ATR"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
 
-            </LinearLayout>
-             <TextView
-                 android:id="@+id/descColorimetria"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:text="Descripción de los elementos de la colorimetría de los cojones"/>
+                    <ImageView
+                        android:id="@+id/imgFtiratr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="11dp"
+                        android:background="@drawable/down_arrow" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/ftiratrDesValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/irChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
+
         <android.support.v7.widget.CardView
+            android:id="@+id/drx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -227,32 +324,65 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
-            app:cardBackgroundColor="#c5f7c5"
             app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="230dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:gravity="center"
-                    android:text="Espectro de Raman"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
+                    android:background="#f1f7b4"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="11dp"
-                    android:background="@drawable/down_arrow" />
+                    <TextView
+                        android:id="@+id/drxDesKey"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:gravity="center"
+                        android:text="DRX"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgDrx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="11dp"
+                        android:background="@drawable/down_arrow" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/drxDesValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/rxChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
+
         <android.support.v7.widget.CardView
+            android:id="@+id/raman"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -260,32 +390,65 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
-            app:cardBackgroundColor="#f1f7b4"
             app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="230dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:gravity="center"
-                    android:text="Fases de Componentes"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
+                    android:background="#c5f7c5"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="11dp"
-                    android:background="@drawable/down_arrow" />
+                    <TextView
+                        android:id="@+id/ramanDesKey"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:gravity="center"
+                        android:text="RAMAN"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgRaman"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="11dp"
+                        android:background="@drawable/down_arrow" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/ramanDesValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <lecho.lib.hellocharts.view.LineChartView
+                            android:id="@+id/ramanChartView"
+                            android:layout_width="match_parent"
+                            android:layout_height="400dp"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
+
         <android.support.v7.widget.CardView
+            android:id="@+id/componentes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_rowWeight="1"
@@ -293,63 +456,45 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
-            app:cardBackgroundColor="#c5f7c5"
             app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#f1f7b4"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/componentesDesKey"
+                        android:layout_width="230dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="15dp"
+                        android:gravity="center"
+                        android:text="COMPOSICION"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imgComponentes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="11dp"
+                        android:background="@drawable/down_arrow" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:layout_width="230dp"
+                    android:id="@+id/componentesDesValue"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:gravity="center"
-                    android:text="Difracción rayos X"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="11dp"
-                    android:background="@drawable/down_arrow" />
+                    android:text="Información difractograma de rayos x" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginEnd="50dp"
-            app:cardBackgroundColor="#f1f7b4"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="15dp"
-                    android:gravity="center"
-                    android:text="Otra información"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="11dp"
-                    android:background="@drawable/down_arrow" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
     </LinearLayout>
 </ScrollView>

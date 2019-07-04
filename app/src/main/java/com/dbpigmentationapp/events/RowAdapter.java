@@ -80,8 +80,47 @@ public class RowAdapter extends ArrayAdapter<CartaPigmentos> implements View.OnC
         lastPosition = position;
 
         viewH.nombre.setText(carta.getNombre());
-        viewH.descripcion.setText(carta.getDescripcion());
-        viewH.color.setCardBackgroundColor(Color.parseColor(carta.getColor()));
+        String aux = carta.getDescripcion();
+        int maxLength = 100;
+        if (aux.length() > maxLength) {
+            aux = aux.substring(0, maxLength);
+        }
+        viewH.descripcion.setText(aux);
+        String colorHex = "";
+        switch (carta.getColor()){
+            case ("1"):
+                colorHex = "#ffffff";
+                break;
+            case ("2"):
+                colorHex = "#63c665";
+                break;
+            case ("3"):
+                colorHex = "#288fef";
+                break;
+            case ("4"):
+                colorHex = "#8337fc";
+                break;
+            case ("5"):
+                colorHex = "#c91be8";
+                break;
+            case ("6"):
+                colorHex = "#000000";
+                break;
+            case ("7"):
+                colorHex = "#faff00";
+                break;
+            case ("8"):
+                colorHex = "#f4a004";
+                break;
+            case ("9"):
+                colorHex = "#ed522f";
+                break;
+            case ("10"):
+                colorHex = "#cca114";
+                break;
+
+        }
+        viewH.color.setCardBackgroundColor(Color.parseColor(colorHex));
         viewH.elemento.setText(carta.getElemento());
 
         return view;

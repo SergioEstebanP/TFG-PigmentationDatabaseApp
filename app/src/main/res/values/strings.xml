@@ -3,11 +3,14 @@
     <string name="nombre_app">Pigment Studio</string>
     <string name="pigmentos">Pigmentos</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="consultaSimple">Consulta Simple</string>
     <string name="consultaAvanzada">Consulta Avanzada</string>
     <string name="graficas">Gráficas</string>
     <string name="añadirPigmento">Añadir Pigmento</string>
     <string name="configuracion">Reportar Bug</string>
+    <string name="consulta_por_nombre">Filtrar por nombre</string>
+    <string name="consulta_por_color">Buscar por color</string>
+    <string name="consulta_por_elemento">Ordenar por elemento quimico</string>
+    <string name="seleccionarColor">Selecciona un color</string>
 </resources>
