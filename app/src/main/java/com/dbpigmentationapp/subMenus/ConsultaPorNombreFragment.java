@@ -13,10 +13,10 @@ import com.dbpigmentationapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ConsultaPorNombre extends Fragment {
+public class ConsultaPorNombreFragment extends Fragment {
 
 
-    public ConsultaPorNombre() {
+    public ConsultaPorNombreFragment() {
         // Required empty public constructor
     }
 

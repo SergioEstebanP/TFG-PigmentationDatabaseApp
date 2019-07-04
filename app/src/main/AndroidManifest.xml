@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".subMenus.ConsultaColor"></activity>
         <activity android:name=".subMenus.Graficas" />
         <activity android:name=".subMenus.ReportarBug" />
         <activity android:name=".subMenus.ConsultaSimple" />

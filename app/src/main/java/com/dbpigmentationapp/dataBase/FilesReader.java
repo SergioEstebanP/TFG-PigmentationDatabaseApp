@@ -19,9 +19,7 @@ public class FilesReader {
 
     public List<String> readLine(String path) {
         List<String> mLines = new ArrayList<>();
-
         AssetManager am = mContext.getAssets();
-
         try {
             InputStream is = am.open(path);
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -34,7 +32,6 @@ public class FilesReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return mLines;
     }
 }

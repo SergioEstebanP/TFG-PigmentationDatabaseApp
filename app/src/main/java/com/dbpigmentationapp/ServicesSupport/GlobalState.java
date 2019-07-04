@@ -12,4 +12,8 @@ public class GlobalState {
     public static List Y_RX_AXIS;
     public static Pigmento PIGMENTO_SELECCIONADO;
     public static Colorimetria COLOR_SELECCIONADO;
+    public static int COLOR_SELECCIONADO_BUSQUEDA;
+    public static boolean FILTRAR_POR_NOMBRE = false;
+    public static boolean FILTRAR_POR_ELEMENTO = false;
+    public static boolean FILTRAR_POR_COLOR = false;
 }

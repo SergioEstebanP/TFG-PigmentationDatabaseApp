@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
@@ -21,19 +21,93 @@
             android:focusable="true"
             android:gravity="center"
             android:padding="10dp"
-            android:text="Selecciona un color"
+            android:text="@string/seleccionarColor"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
         <top.defaults.colorpicker.ColorPickerView
             android:id="@+id/colorPicker"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:enableBrightness="true"
-            app:enableAlpha="true"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            app:enableAlpha="false"
+            app:enableBrightness="false" />
 
+        <android.support.v7.widget.CardView
+            android:id="@+id/colorSeleecionado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            app:cardBackgroundColor="#e0e3e5"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="Color seleccionado"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cuadradoColorSeleccionado"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="9dp"
+                    android:background="#7F313C93" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
     </LinearLayout>
+
+ <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/busquedaSimpleColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="#76bae8"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="Buscar pigmentos"
+                    android:textColor="#000"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginBottom="17dp"
+                    android:background="@drawable/lupa_black" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
 </RelativeLayout>

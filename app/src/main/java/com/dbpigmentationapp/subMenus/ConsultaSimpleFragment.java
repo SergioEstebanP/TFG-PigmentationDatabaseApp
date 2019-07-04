@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import com.dbpigmentationapp.R;
 
+//TODO elimiar esta clase, en principio ha sido sustituida por la fancy
 public class ConsultaSimpleFragment extends Fragment {
 
     private CardView parametrosColor;

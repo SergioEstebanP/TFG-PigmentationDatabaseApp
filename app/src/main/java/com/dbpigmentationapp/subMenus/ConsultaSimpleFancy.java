@@ -30,13 +30,13 @@ public class ConsultaSimpleFancy extends Fragment {
         color.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), ConsultaPorColor.class);
+                Intent intent = new Intent(view.getContext(), ConsultaColor.class);
                 startActivity(intent);
             }
         });
 
         // seteamos la accion para el boton de buscar por nombre
-        nombre.setOnClickListener(new View.OnClickListener() {
+        /*nombre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), ConsultaPorNombre.class);
@@ -51,7 +51,7 @@ public class ConsultaSimpleFancy extends Fragment {
                 Intent intent = new Intent(view.getContext(), ConsultaPorElemento.class);
                 startActivity(intent);
             }
-        });
+        }); */
 
         return view;
     }

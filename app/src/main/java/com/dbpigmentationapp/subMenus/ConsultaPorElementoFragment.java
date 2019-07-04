@@ -13,10 +13,10 @@ import com.dbpigmentationapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ConsultaPorColor extends Fragment {
+public class ConsultaPorElementoFragment extends Fragment {
 
 
-    public ConsultaPorColor() {
+    public ConsultaPorElementoFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class ConsultaPorColor extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consulta_por_color, container, false);
+        return inflater.inflate(R.layout.fragment_consulta_por_elemento, container, false);
     }
 
 }

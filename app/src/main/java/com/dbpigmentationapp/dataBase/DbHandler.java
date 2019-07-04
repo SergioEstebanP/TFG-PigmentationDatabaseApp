@@ -100,13 +100,13 @@ public class DbHandler extends SQLiteOpenHelper {
 
     // OBTENER TODOS LOS PIGMENTOS DADO UN PARAMETRO:
     // COLOR, NOMBRE o ELEMENTO QUIMICO
-    public List<Pigmento> todosPigmentosParametro(String parametro) {
+    public List<Pigmento> todosPigmentosParametro(String parametro, String value) {
         List<Pigmento> pigmentos = new LinkedList<>();
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.query(DbDefinition.TABLA_PIGMENTOS,
                 DbDefinition.COLUMNAS_PIGMENTO,
                 " " + parametro + " = ?",
-                new String[]{String.valueOf(parametro)},
+                new String[]{String.valueOf(value)},
                 null,
                 null,
                 null,
