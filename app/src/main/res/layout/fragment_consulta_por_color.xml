@@ -27,19 +27,20 @@
 
         <top.defaults.colorpicker.ColorPickerView
             android:id="@+id/colorPicker"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="300dp"
+            android:layout_height="219dp"
+            android:layout_gravity="center"
             app:enableAlpha="false"
-            app:enableBrightness="false" />
+            app:enableBrightness="true" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/colorSeleecionado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="50dp"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="10dp"
             app:cardBackgroundColor="#e0e3e5"
             app:cardElevation="8dp">
 
@@ -65,9 +66,69 @@
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Coordenadas RGB del color"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="120dp"
+            android:background="#000000" />
+
+        <TextView
+            android:id="@+id/coordenadaR"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Coordenada R: "
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/coordenadaG"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Coordenada G: "
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/coordenadaB"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:text="Coordenada B: "
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="90dp"
+            android:layout_marginEnd="120dp"
+            android:background="#000000" />
+
+
     </LinearLayout>
 
- <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -106,6 +167,7 @@
                     android:layout_marginTop="17dp"
                     android:layout_marginBottom="17dp"
                     android:background="@drawable/lupa_black" />
+
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </LinearLayout>

@@ -99,7 +99,7 @@ public class DbHandler extends SQLiteOpenHelper {
     }
 
     // OBTENER TODOS LOS PIGMENTOS DADO UN PARAMETRO:
-    // COLOR, NOMBRE o ELEMENTO QUIMICO
+    // COLOR
     public List<Pigmento> todosPigmentosParametro(String parametro, String value) {
         List<Pigmento> pigmentos = new LinkedList<>();
         SQLiteDatabase db = this.getWritableDatabase();
@@ -111,6 +111,31 @@ public class DbHandler extends SQLiteOpenHelper {
                 null,
                 null,
                 null);
+        Pigmento pigmento;
+        if (cursor.moveToFirst()) {
+            do {
+                pigmento = new Pigmento();
+                pigmento.setIdPigmento(cursor.getString(0));
+                pigmento.setIdColor(cursor.getString(1));
+                pigmento.setNombre(cursor.getString(2));
+                pigmento.setColor(cursor.getString(3));
+                pigmento.setPotencia(Float.parseFloat(cursor.getString(4)));
+                pigmento.setLambda(Float.parseFloat(cursor.getString(5)));
+                pigmento.setFormula(cursor.getString(6));
+                pigmento.setElementoQuimico(cursor.getString(7));
+                pigmento.setDescripcion(cursor.getString(8));
+                pigmentos.add(pigmento);
+            } while (cursor.moveToNext());
+        }
+        return pigmentos;
+    }
+
+    // OBTENER TODOS LOS PIGMENTOS POR NOMBRE O ELEMENTO QUIMICO PRINCIPAL
+    public List<Pigmento> todosPigmentosNombreElemento(String parametro, String value) {
+        List<Pigmento> pigmentos = new LinkedList<>();
+        String query = "SELECT  * FROM " + DbDefinition.TABLA_PIGMENTOS + " WHERE " + parametro + " LIKE '%" + value + "%'";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
         Pigmento pigmento;
         if (cursor.moveToFirst()) {
             do {
@@ -329,5 +354,6 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         return color;
     }
+
 }
 

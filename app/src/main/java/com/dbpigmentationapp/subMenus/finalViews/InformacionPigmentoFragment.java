@@ -147,7 +147,6 @@ public class InformacionPigmentoFragment extends Fragment {
         });
 
         // DRX
-        DataCreation.getDataRx(GlobalState.PIGMENTO_SELECCIONADO, this.getContext());
         chartRx = view.findViewById(R.id.drxDesValue);
         chartRx.setVisibility(View.GONE);
         imgRx = view.findViewById(R.id.imgDrx);
