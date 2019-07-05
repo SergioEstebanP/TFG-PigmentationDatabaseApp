@@ -36,9 +36,6 @@ public class TodosPigmentos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todos_pigmentos);
 
-//        GlobalState.pgsBar.setVisibility(8);
-//        GlobalState.progresText.setVisibility(8);
-
         db = new DbHandler(this);
 
         DataCreation.createBulkData(db, this);

@@ -4,5 +4,14 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
+    <color name="lightBlue">#20A6E7</color>
+    <color name="lightx2Blue">#84CEF3</color>
     <color name="gray_500">#c0c3c6</color>
+
+    <color name="orangeTable">#F3A95C</color>
+    <color name="yellowTable">#F8D85D</color>
+    <color name="violetTable">#BEA4F7</color>
+    <color name="verdeFosfoTable">#90CC4B</color>
+    <color name="verdeOscuroTable">#39831A</color>
+    <color name="verdeClaroTable">#90F7AF</color>
 </resources>
