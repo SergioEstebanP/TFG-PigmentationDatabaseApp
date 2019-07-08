@@ -1,10 +1,10 @@
 package com.dbpigmentationapp.dataModel;
 
 public class CartaPigmentos {
-    String nombre;
-    String descripcion;
-    String color;
-    String elemento;
+    private String nombre;
+    private String descripcion;
+    private String color;
+    private String elemento;
 
     public CartaPigmentos (String nombre, String descripcion, String color, String elemento) {
         this.nombre = nombre;

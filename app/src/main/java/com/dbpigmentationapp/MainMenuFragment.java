@@ -34,7 +34,7 @@ public class MainMenuFragment extends Fragment {
         pigmentos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast toast = Toast.makeText(getContext(), "Cargand datos", Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(getContext(), "Cargando datos", Toast.LENGTH_SHORT);
                 View toastView = toast.getView();
                 toastView.getBackground().setColorFilter(Color.BLACK, PorterDuff.Mode.SRC_IN);
                 TextView text = toastView.findViewById(android.R.id.message);

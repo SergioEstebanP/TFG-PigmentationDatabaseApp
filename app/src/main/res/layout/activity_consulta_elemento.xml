@@ -20,7 +20,7 @@
             android:focusable="true"
             android:gravity="center"
             android:padding="10dp"
-            android:text="@string/seleccionarElemento"
+            android:text="Elige un elemento de la tabla periódica"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 

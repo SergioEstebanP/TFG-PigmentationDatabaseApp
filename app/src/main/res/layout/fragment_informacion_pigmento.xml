@@ -189,7 +189,7 @@
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="50dp"
             app:cardElevation="8dp">
 
@@ -201,7 +201,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#f1f7b4"
+                    android:background="#7aadff"
                     android:orientation="horizontal">
 
                     <TextView
@@ -236,11 +236,152 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <lecho.lib.hellocharts.view.LineChartView
-                            android:id="@+id/colorimetriaChartView"
+                        <android.support.v7.widget.CardView
                             android:layout_width="match_parent"
-                            android:layout_height="400dp"
-                            android:padding="10dp" />
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            app:cardBackgroundColor="#e0e3e5"
+                            app:cardElevation="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/coordenadaR"
+                                    android:layout_width="230dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="15dp"
+                                    android:text="Coponente Rojo: "
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_margin="9dp"
+                                    android:background="#d1411d" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            app:cardBackgroundColor="#e0e3e5"
+                            app:cardElevation="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/coordenadaB"
+                                    android:layout_width="230dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="15dp"
+                                    android:text="Componente Azul: "
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_margin="9dp"
+                                    android:background="#1d9ade" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            app:cardBackgroundColor="#e0e3e5"
+                            app:cardElevation="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/coordenadaG"
+                                    android:layout_width="230dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="15dp"
+                                    android:text="Componente Verde: "
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_margin="9dp"
+                                    android:background="#1ad94d" />
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#e0e3e5"
+                            android:gravity="center"
+                            android:padding="15dp"
+                            android:text="Espacio de color L*a*b"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/coordenadasLab"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            app:cardBackgroundColor="#e0e3e5"
+                            app:cardElevation="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/coordenadaL"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="L: "
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/coordenadaa"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="a: "
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
+
+                                <TextView
+                                    android:id="@+id/coordenadab"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="b: "
+                                    android:textColor="#000"
+                                    android:textSize="16sp" />
+
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
 
                     </LinearLayout>
                 </android.support.v7.widget.CardView>
@@ -334,7 +475,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#f1f7b4"
+                    android:background="#7aadff"
                     android:orientation="horizontal">
 
                     <TextView
@@ -394,6 +535,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_marginBottom="10dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -428,6 +570,7 @@
                     android:layout_height="wrap_content"
                     android:layout_rowWeight="1"
                     android:layout_columnWeight="1"
+                    android:layout_marginBottom="40dp"
                     app:cardElevation="8dp">
 
                     <LinearLayout
@@ -447,54 +590,54 @@
         </android.support.v7.widget.CardView>
 
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/componentes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="50dp"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#f1f7b4"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/componentesDesKey"
-                        android:layout_width="230dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        android:gravity="center"
-                        android:text="COMPOSICION"
-                        android:textColor="#000"
-                        android:textSize="16sp" />
-
-                    <ImageView
-                        android:id="@+id/imgComponentes"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_margin="11dp"
-                        android:background="@drawable/down_arrow" />
-
-                </LinearLayout>
-
-                <TextView
-                    android:id="@+id/componentesDesValue"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Información difractograma de rayos x" />
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+        <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/componentes"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_rowWeight="1"-->
+        <!--android:layout_columnWeight="1"-->
+        <!--android:layout_marginStart="50dp"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_marginEnd="50dp"-->
+        <!--app:cardElevation="8dp">-->
+        <!---->
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical">-->
+        <!---->
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="#f1f7b4"-->
+        <!--android:orientation="horizontal">-->
+        <!---->
+        <!--<TextView-->
+        <!--android:id="@+id/componentesDesKey"-->
+        <!--android:layout_width="230dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="15dp"-->
+        <!--android:gravity="center"-->
+        <!--android:text="COMPOSICION"-->
+        <!--android:textColor="#000"-->
+        <!--android:textSize="16sp" />-->
+        <!---->
+        <!--<ImageView-->
+        <!--android:id="@+id/imgComponentes"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_margin="11dp"-->
+        <!--android:background="@drawable/down_arrow" />-->
+        <!---->
+        <!--</LinearLayout>-->
+        <!---->
+        <!--<TextView-->
+        <!--android:id="@+id/componentesDesValue"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Información difractograma de rayos x" />-->
+        <!--</LinearLayout>-->
+        <!--</android.support.v7.widget.CardView>-->
 
     </LinearLayout>
 </ScrollView>

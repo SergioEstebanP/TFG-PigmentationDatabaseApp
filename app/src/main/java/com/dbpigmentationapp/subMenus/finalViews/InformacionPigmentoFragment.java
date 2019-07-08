@@ -43,11 +43,18 @@ public class InformacionPigmentoFragment extends Fragment {
     private TextView colorBase;
 
 
+    private TextView coordR;
+    private TextView coordG;
+    private TextView coordB;
+    private TextView coordL;
+    private TextView coordA;
+    private TextView coordb;
+
+
     // GRAFICAS
 
     private ImageView imgColorimetria;
     private CardView chartColorimetria;
-    private LineChartView colorimetriaChart;
 
     private ImageView imgIr;
     private CardView chartIr;
@@ -96,10 +103,58 @@ public class InformacionPigmentoFragment extends Fragment {
         formula.setText(GlobalState.PIGMENTO_SELECCIONADO.getFormula());
         elemento.setText(GlobalState.PIGMENTO_SELECCIONADO.getElementoQuimico());
         coordenadasTricromicas.setText(GlobalState.COLOR_SELECCIONADO.getL() + "-" + GlobalState.COLOR_SELECCIONADO.getA() + "-" + GlobalState.COLOR_SELECCIONADO.getB());
-        colorBase.setText(GlobalState.PIGMENTO_SELECCIONADO.getIdColor());
+
+        switch (GlobalState.PIGMENTO_SELECCIONADO.getIdColor()) {
+            case ("1"):
+                colorBase.setText("Blanco");
+                break;
+            case ("2"):
+                colorBase.setText("Verde");
+                break;
+            case ("3"):
+                colorBase.setText("Azul");
+                break;
+            case ("4"):
+                colorBase.setText("Violeta");
+                break;
+            case ("5"):
+                colorBase.setText("Magenta");
+                break;
+            case ("6"):
+                colorBase.setText("Negro");
+                break;
+            case ("7"):
+                colorBase.setText("Amarillo");
+                break;
+            case ("8"):
+                colorBase.setText("Naranja");
+                break;
+            case ("9"):
+                colorBase.setText("Rojo");
+                break;
+            default:
+                colorBase.setText("Ocre");
+                break;
+        }
 
         animationUp = AnimationUtils.loadAnimation(view.getContext(), R.anim.slide_up);
         animationDown = AnimationUtils.loadAnimation(view.getContext(), R.anim.slide_down);
+
+        coordR = view.findViewById(R.id.coordenadaR);
+        coordG = view.findViewById(R.id.coordenadaG);
+        coordB = view.findViewById(R.id.coordenadaB);
+        coordL = view.findViewById(R.id.coordenadaL);
+        coordA = view.findViewById(R.id.coordenadaa);
+        coordb = view.findViewById(R.id.coordenadab);
+
+        coordL.setText("L: " + GlobalState.COLOR_SELECCIONADO.getL());
+        coordA.setText("a: " + GlobalState.COLOR_SELECCIONADO.getA());
+        coordb.setText("b: " + GlobalState.COLOR_SELECCIONADO.getB());
+
+        coordR.setText("Componente Rojo: " + Color.valueOf(ColorUtils.LABToColor(GlobalState.COLOR_SELECCIONADO.getL(), GlobalState.COLOR_SELECCIONADO.getA(), GlobalState.COLOR_SELECCIONADO.getB())).red());
+        coordG.setText("Componente Verde: " + Color.valueOf(ColorUtils.LABToColor(GlobalState.COLOR_SELECCIONADO.getL(), GlobalState.COLOR_SELECCIONADO.getA(), GlobalState.COLOR_SELECCIONADO.getB())).green());
+        coordB.setText("Componente Azul: " + Color.valueOf(ColorUtils.LABToColor(GlobalState.COLOR_SELECCIONADO.getL(), GlobalState.COLOR_SELECCIONADO.getA(), GlobalState.COLOR_SELECCIONADO.getB())).blue());
+
 
         // ***********************************
         // GENERACION DE LAS GRAFICAS        *
@@ -191,8 +246,7 @@ public class InformacionPigmentoFragment extends Fragment {
 
     private void createChart(List yIrAxis, List xIrAxis, LineChartView chart) {
         final String BLACK_COLOR = "#000000";
-        List yAxisValues = yIrAxis;
-        Line line = new Line(yAxisValues);
+        Line line = new Line(yIrAxis);
         line.setHasPoints(false);
         line.setColor(Color.parseColor(BLACK_COLOR));
         line.setStrokeWidth(1);
