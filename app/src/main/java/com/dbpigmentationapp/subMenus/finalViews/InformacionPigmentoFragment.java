@@ -1,5 +1,6 @@
 package com.dbpigmentationapp.subMenus.finalViews;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.graphics.Color;
 import android.os.Build;
@@ -71,6 +72,7 @@ public class InformacionPigmentoFragment extends Fragment {
     private Animation animationUp;
     private Animation animationDown;
 
+    @SuppressLint("SetTextI18n")
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -202,6 +204,7 @@ public class InformacionPigmentoFragment extends Fragment {
         });
 
         // DRX
+        DataCreation.getDataRx(GlobalState.PIGMENTO_SELECCIONADO, this.getContext());
         chartRx = view.findViewById(R.id.drxDesValue);
         chartRx.setVisibility(View.GONE);
         imgRx = view.findViewById(R.id.imgDrx);
@@ -228,7 +231,7 @@ public class InformacionPigmentoFragment extends Fragment {
         imgRaman = view.findViewById(R.id.imgRaman);
         ramanChart = view.findViewById(R.id.ramanChartView);
 
-        createChart(GlobalState.Y_RX_AXIS, GlobalState.X_RX_AXIS, ramanChart);
+        createChart(GlobalState.Y_RAMAN_AXIS, GlobalState.X_RAMAN_AXIS, ramanChart);
         imgRaman.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

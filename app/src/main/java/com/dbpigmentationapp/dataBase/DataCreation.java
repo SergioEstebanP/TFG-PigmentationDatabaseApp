@@ -131,7 +131,7 @@ public class DataCreation {
         int i = 0;
         for (String line : mLines) {
             String[] valores = line.split(";");
-            if (valores.length > 1) {
+            if (valores.length == 3) {
                 if (pigmento.getIdPigmento().equals(valores[0])) {
                     xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
                     yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
@@ -151,7 +151,7 @@ public class DataCreation {
         int i = 0;
         for (String line : mLines) {
             String[] valores = line.split(";");
-            if (valores.length > 1) {
+            if (valores.length == 3) {
                 if (pigmento.getIdPigmento().equals(valores[0])) {
                     xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
                     yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
@@ -171,7 +171,7 @@ public class DataCreation {
         int i = 0;
         for (String line : mLines) {
             String[] valores = line.split(";");
-            if (valores.length > 1) {
+            if (valores.length == 3) {
                 if (pigmento.getIdPigmento().equals(valores[0])) {
                     xValues.add(i, new AxisValue(i).setLabel(String.valueOf(valores[1])));
                     yValues.add(new PointValue(i, Float.parseFloat(valores[2].replace(",", "."))));
@@ -179,7 +179,7 @@ public class DataCreation {
                 }
             }
         }
-        GlobalState.X_RX_AXIS = xValues;
-        GlobalState.Y_RX_AXIS = yValues;
+        GlobalState.X_RAMAN_AXIS = xValues;
+        GlobalState.Y_RAMAN_AXIS = yValues;
     }
 }
